@@ -30,6 +30,7 @@ Partial Class frm_customers_a189479
         '
         'btn_back_mainmenu
         '
+        Me.btn_back_mainmenu.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_back_mainmenu.Location = New System.Drawing.Point(612, 412)
         Me.btn_back_mainmenu.Name = "btn_back_mainmenu"
         Me.btn_back_mainmenu.Size = New System.Drawing.Size(151, 23)
@@ -49,9 +50,14 @@ Partial Class frm_customers_a189479
         '
         'grd_customers
         '
+        Me.grd_customers.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grd_customers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.grd_customers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grd_customers.Location = New System.Drawing.Point(12, 52)
         Me.grd_customers.Name = "grd_customers"
+        Me.grd_customers.ReadOnly = True
         Me.grd_customers.RowHeadersWidth = 51
         Me.grd_customers.RowTemplate.Height = 24
         Me.grd_customers.Size = New System.Drawing.Size(776, 341)

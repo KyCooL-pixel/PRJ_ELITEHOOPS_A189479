@@ -31,6 +31,7 @@ Partial Class frm_mainmenu_a189479
         Me.btn_exit = New System.Windows.Forms.Button()
         Me.lbl_motto = New System.Windows.Forms.Label()
         Me.pic_logo = New System.Windows.Forms.PictureBox()
+        Me.linklbl_github = New System.Windows.Forms.LinkLabel()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -59,7 +60,7 @@ Partial Class frm_mainmenu_a189479
         '
         'btn_view_products
         '
-        Me.btn_view_products.Location = New System.Drawing.Point(36, 243)
+        Me.btn_view_products.Location = New System.Drawing.Point(76, 260)
         Me.btn_view_products.Name = "btn_view_products"
         Me.btn_view_products.Size = New System.Drawing.Size(130, 40)
         Me.btn_view_products.TabIndex = 2
@@ -68,7 +69,7 @@ Partial Class frm_mainmenu_a189479
         '
         'btn_view_orders
         '
-        Me.btn_view_orders.Location = New System.Drawing.Point(411, 363)
+        Me.btn_view_orders.Location = New System.Drawing.Point(249, 260)
         Me.btn_view_orders.Name = "btn_view_orders"
         Me.btn_view_orders.Size = New System.Drawing.Size(130, 40)
         Me.btn_view_orders.TabIndex = 3
@@ -77,7 +78,7 @@ Partial Class frm_mainmenu_a189479
         '
         'btn_view_customers
         '
-        Me.btn_view_customers.Location = New System.Drawing.Point(411, 243)
+        Me.btn_view_customers.Location = New System.Drawing.Point(413, 260)
         Me.btn_view_customers.Name = "btn_view_customers"
         Me.btn_view_customers.Size = New System.Drawing.Size(130, 40)
         Me.btn_view_customers.TabIndex = 4
@@ -86,7 +87,7 @@ Partial Class frm_mainmenu_a189479
         '
         'btn_view_staff
         '
-        Me.btn_view_staff.Location = New System.Drawing.Point(36, 363)
+        Me.btn_view_staff.Location = New System.Drawing.Point(573, 260)
         Me.btn_view_staff.Name = "btn_view_staff"
         Me.btn_view_staff.Size = New System.Drawing.Size(130, 40)
         Me.btn_view_staff.TabIndex = 5
@@ -127,11 +128,25 @@ Partial Class frm_mainmenu_a189479
         Me.pic_logo.TabIndex = 7
         Me.pic_logo.TabStop = False
         '
+        'linklbl_github
+        '
+        Me.linklbl_github.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.linklbl_github.AutoSize = True
+        Me.linklbl_github.LinkArea = New System.Windows.Forms.LinkArea(28, 11)
+        Me.linklbl_github.Location = New System.Drawing.Point(15, 413)
+        Me.linklbl_github.Name = "linklbl_github"
+        Me.linklbl_github.Size = New System.Drawing.Size(243, 20)
+        Me.linklbl_github.TabIndex = 9
+        Me.linklbl_github.TabStop = True
+        Me.linklbl_github.Text = "For more info, check out my github page"
+        Me.linklbl_github.UseCompatibleTextRendering = True
+        '
         'frm_mainmenu_a189479
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.linklbl_github)
         Me.Controls.Add(Me.lbl_motto)
         Me.Controls.Add(Me.pic_logo)
         Me.Controls.Add(Me.btn_exit)
@@ -158,4 +173,5 @@ Partial Class frm_mainmenu_a189479
     Friend WithEvents btn_exit As Button
     Friend WithEvents pic_logo As PictureBox
     Friend WithEvents lbl_motto As Label
+    Friend WithEvents linklbl_github As LinkLabel
 End Class

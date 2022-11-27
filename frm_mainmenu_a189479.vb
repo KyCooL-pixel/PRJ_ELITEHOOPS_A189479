@@ -31,4 +31,8 @@
         frm_orders_a189479.Show()
         Me.Hide()
     End Sub
+
+    Private Sub linklbl_github_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklbl_github.LinkClicked
+        System.Diagnostics.Process.Start(githubLink)
+    End Sub
 End Class

@@ -30,9 +30,14 @@ Partial Class frm_products_a189479
         '
         'grd_products
         '
+        Me.grd_products.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grd_products.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.grd_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grd_products.Location = New System.Drawing.Point(12, 45)
         Me.grd_products.Name = "grd_products"
+        Me.grd_products.ReadOnly = True
         Me.grd_products.RowHeadersWidth = 51
         Me.grd_products.RowTemplate.Height = 24
         Me.grd_products.Size = New System.Drawing.Size(776, 341)
@@ -50,6 +55,7 @@ Partial Class frm_products_a189479
         '
         'btn_back_mainmenu
         '
+        Me.btn_back_mainmenu.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_back_mainmenu.Location = New System.Drawing.Point(612, 405)
         Me.btn_back_mainmenu.Name = "btn_back_mainmenu"
         Me.btn_back_mainmenu.Size = New System.Drawing.Size(151, 23)

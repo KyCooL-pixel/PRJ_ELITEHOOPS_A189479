@@ -30,6 +30,7 @@ Partial Class frm_orders_a189479
         '
         'btn_back_mainmenu
         '
+        Me.btn_back_mainmenu.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_back_mainmenu.Location = New System.Drawing.Point(612, 412)
         Me.btn_back_mainmenu.Name = "btn_back_mainmenu"
         Me.btn_back_mainmenu.Size = New System.Drawing.Size(151, 23)
@@ -49,9 +50,14 @@ Partial Class frm_orders_a189479
         '
         'grd_orders
         '
+        Me.grd_orders.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grd_orders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.grd_orders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grd_orders.Location = New System.Drawing.Point(12, 52)
         Me.grd_orders.Name = "grd_orders"
+        Me.grd_orders.ReadOnly = True
         Me.grd_orders.RowHeadersWidth = 51
         Me.grd_orders.RowTemplate.Height = 24
         Me.grd_orders.Size = New System.Drawing.Size(776, 341)
