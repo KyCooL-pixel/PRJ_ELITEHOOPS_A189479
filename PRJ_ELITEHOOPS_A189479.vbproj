@@ -104,7 +104,7 @@
     <Compile Include="frm_staffs_a189479.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mod_globals_A189479.vb" />
+    <Compile Include="mod_globals_a189479.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
