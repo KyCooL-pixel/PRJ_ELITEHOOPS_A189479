@@ -66,4 +66,9 @@
     Private Sub btn_clear_fields_Click(sender As Object, e As EventArgs) Handles btn_clear_fields.Click
         clear_fields()
     End Sub
+
+    Private Sub btn_back_to_details_Click(sender As Object, e As EventArgs) Handles btn_back_to_details.Click
+        frm_product_details_a189479.Show()
+        Me.Hide()
+    End Sub
 End Class

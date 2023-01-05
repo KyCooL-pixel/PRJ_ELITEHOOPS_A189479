@@ -43,6 +43,7 @@ Partial Class frm_add_product_a189479
         Me.pic_product = New System.Windows.Forms.PictureBox()
         Me.btn_select_picture = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.btn_back_to_details = New System.Windows.Forms.Button()
         CType(Me.grd_product_view, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pic_product, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -223,11 +224,21 @@ Partial Class frm_add_product_a189479
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'btn_back_to_details
+        '
+        Me.btn_back_to_details.Location = New System.Drawing.Point(31, 430)
+        Me.btn_back_to_details.Name = "btn_back_to_details"
+        Me.btn_back_to_details.Size = New System.Drawing.Size(109, 40)
+        Me.btn_back_to_details.TabIndex = 16
+        Me.btn_back_to_details.Text = "Back"
+        Me.btn_back_to_details.UseVisualStyleBackColor = True
+        '
         'frm_add_product_a189479
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(701, 496)
+        Me.Controls.Add(Me.btn_back_to_details)
         Me.Controls.Add(Me.btn_select_picture)
         Me.Controls.Add(Me.pic_product)
         Me.Controls.Add(Me.btn_clear_fields)
@@ -278,4 +289,5 @@ Partial Class frm_add_product_a189479
     Friend WithEvents pic_product As PictureBox
     Friend WithEvents btn_select_picture As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents btn_back_to_details As Button
 End Class
