@@ -25,24 +25,22 @@ Partial Class frm_mainmenu_a189479
         Me.lbl_menutitle = New System.Windows.Forms.Label()
         Me.lbl_short_menu_decription = New System.Windows.Forms.Label()
         Me.btn_view_products = New System.Windows.Forms.Button()
-        Me.btn_view_orders = New System.Windows.Forms.Button()
         Me.btn_view_customers = New System.Windows.Forms.Button()
         Me.btn_view_staff = New System.Windows.Forms.Button()
         Me.btn_exit = New System.Windows.Forms.Button()
-        Me.lbl_motto = New System.Windows.Forms.Label()
-        Me.pic_logo = New System.Windows.Forms.PictureBox()
         Me.linklbl_github = New System.Windows.Forms.LinkLabel()
-        CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btn_view_orders = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lbl_menutitle
         '
         Me.lbl_menutitle.AutoSize = True
-        Me.lbl_menutitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_menutitle.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_menutitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_menutitle.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.lbl_menutitle.Location = New System.Drawing.Point(219, 18)
+        Me.lbl_menutitle.Location = New System.Drawing.Point(25, 3)
         Me.lbl_menutitle.Name = "lbl_menutitle"
-        Me.lbl_menutitle.Size = New System.Drawing.Size(179, 36)
+        Me.lbl_menutitle.Size = New System.Drawing.Size(237, 46)
         Me.lbl_menutitle.TabIndex = 0
         Me.lbl_menutitle.Text = "Elite Hoops"
         Me.lbl_menutitle.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -50,11 +48,13 @@ Partial Class frm_mainmenu_a189479
         'lbl_short_menu_decription
         '
         Me.lbl_short_menu_decription.AutoSize = True
-        Me.lbl_short_menu_decription.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_short_menu_decription.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.lbl_short_menu_decription.Location = New System.Drawing.Point(224, 56)
+        Me.lbl_short_menu_decription.BackColor = System.Drawing.SystemColors.InfoText
+        Me.lbl_short_menu_decription.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.lbl_short_menu_decription.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_short_menu_decription.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lbl_short_menu_decription.Location = New System.Drawing.Point(37, 56)
         Me.lbl_short_menu_decription.Name = "lbl_short_menu_decription"
-        Me.lbl_short_menu_decription.Size = New System.Drawing.Size(357, 20)
+        Me.lbl_short_menu_decription.Size = New System.Drawing.Size(415, 27)
         Me.lbl_short_menu_decription.TabIndex = 1
         Me.lbl_short_menu_decription.Text = "#1 BasketBall && Equipments shop in Malaysia "
         '
@@ -66,15 +66,6 @@ Partial Class frm_mainmenu_a189479
         Me.btn_view_products.TabIndex = 2
         Me.btn_view_products.Text = "View Products"
         Me.btn_view_products.UseVisualStyleBackColor = True
-        '
-        'btn_view_orders
-        '
-        Me.btn_view_orders.Location = New System.Drawing.Point(249, 260)
-        Me.btn_view_orders.Name = "btn_view_orders"
-        Me.btn_view_orders.Size = New System.Drawing.Size(130, 40)
-        Me.btn_view_orders.TabIndex = 3
-        Me.btn_view_orders.Text = "View Orders"
-        Me.btn_view_orders.UseVisualStyleBackColor = True
         '
         'btn_view_customers
         '
@@ -98,57 +89,48 @@ Partial Class frm_mainmenu_a189479
         '
         Me.btn_exit.BackColor = System.Drawing.Color.DarkRed
         Me.btn_exit.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_exit.Location = New System.Drawing.Point(650, 393)
+        Me.btn_exit.Location = New System.Drawing.Point(657, 404)
         Me.btn_exit.Name = "btn_exit"
         Me.btn_exit.Size = New System.Drawing.Size(114, 37)
         Me.btn_exit.TabIndex = 6
         Me.btn_exit.Text = "Exit Program"
         Me.btn_exit.UseVisualStyleBackColor = False
         '
-        'lbl_motto
-        '
-        Me.lbl_motto.AutoSize = True
-        Me.lbl_motto.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_motto.Location = New System.Drawing.Point(224, 103)
-        Me.lbl_motto.Name = "lbl_motto"
-        Me.lbl_motto.Size = New System.Drawing.Size(562, 34)
-        Me.lbl_motto.TabIndex = 8
-        Me.lbl_motto.Text = "We strive to provide best basketball equipments and create joy in basketball comm" &
-    "unity." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Everyone can have fun !!!"
-        '
-        'pic_logo
-        '
-        Me.pic_logo.BackgroundImage = Global.PRJ_ELITEHOOPS_A189479.My.Resources.Resources.elite_hoops_logo
-        Me.pic_logo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pic_logo.Image = Global.PRJ_ELITEHOOPS_A189479.My.Resources.Resources.elite_hoops_logo
-        Me.pic_logo.Location = New System.Drawing.Point(18, 12)
-        Me.pic_logo.Name = "pic_logo"
-        Me.pic_logo.Size = New System.Drawing.Size(195, 141)
-        Me.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pic_logo.TabIndex = 7
-        Me.pic_logo.TabStop = False
-        '
         'linklbl_github
         '
         Me.linklbl_github.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.linklbl_github.AutoSize = True
+        Me.linklbl_github.BackColor = System.Drawing.Color.Transparent
+        Me.linklbl_github.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.linklbl_github.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.linklbl_github.LinkArea = New System.Windows.Forms.LinkArea(28, 11)
-        Me.linklbl_github.Location = New System.Drawing.Point(15, 413)
+        Me.linklbl_github.Location = New System.Drawing.Point(6, 420)
         Me.linklbl_github.Name = "linklbl_github"
-        Me.linklbl_github.Size = New System.Drawing.Size(243, 20)
+        Me.linklbl_github.Size = New System.Drawing.Size(291, 22)
         Me.linklbl_github.TabIndex = 9
         Me.linklbl_github.TabStop = True
         Me.linklbl_github.Text = "For more info, check out my github page"
         Me.linklbl_github.UseCompatibleTextRendering = True
         '
+        'btn_view_orders
+        '
+        Me.btn_view_orders.Location = New System.Drawing.Point(249, 260)
+        Me.btn_view_orders.Name = "btn_view_orders"
+        Me.btn_view_orders.Size = New System.Drawing.Size(130, 40)
+        Me.btn_view_orders.TabIndex = 3
+        Me.btn_view_orders.Text = "View Orders"
+        Me.btn_view_orders.UseVisualStyleBackColor = True
+        '
         'frm_mainmenu_a189479
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.BackgroundImage = Global.PRJ_ELITEHOOPS_A189479.My.Resources.Resources.tj_dragotta_Gl0jBJJTDWs_unsplash
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.linklbl_github)
-        Me.Controls.Add(Me.lbl_motto)
-        Me.Controls.Add(Me.pic_logo)
         Me.Controls.Add(Me.btn_exit)
         Me.Controls.Add(Me.btn_view_staff)
         Me.Controls.Add(Me.btn_view_customers)
@@ -158,7 +140,6 @@ Partial Class frm_mainmenu_a189479
         Me.Controls.Add(Me.lbl_menutitle)
         Me.Name = "frm_mainmenu_a189479"
         Me.Text = "Main Menu"
-        CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -171,7 +152,5 @@ Partial Class frm_mainmenu_a189479
     Friend WithEvents btn_view_customers As Button
     Friend WithEvents btn_view_staff As Button
     Friend WithEvents btn_exit As Button
-    Friend WithEvents pic_logo As PictureBox
-    Friend WithEvents lbl_motto As Label
     Friend WithEvents linklbl_github As LinkLabel
 End Class

@@ -30,3 +30,5 @@ C:\Users\user\EliteHoops\prj_elitehoops_a189479\obj\Debug\prj_elitehoops_a189479
 C:\Users\user\EliteHoops\prj_elitehoops_a189479\obj\Debug\PRJ_ELITEHOOPS_A189479.exe
 C:\Users\user\EliteHoops\prj_elitehoops_a189479\obj\Debug\PRJ_ELITEHOOPS_A189479.xml
 C:\Users\user\EliteHoops\prj_elitehoops_a189479\obj\Debug\PRJ_ELITEHOOPS_A189479.pdb
+C:\Users\user\EliteHoops\PRJ_ELITEHOOPS_A189479\obj\Debug\PRJ_ELITEHOOPS_A189479.frm_product_details_a189479.resources
+C:\Users\user\EliteHoops\PRJ_ELITEHOOPS_A189479\obj\Debug\PRJ_ELITEHOOPS_A189479.frm_add_product_a189479.resources

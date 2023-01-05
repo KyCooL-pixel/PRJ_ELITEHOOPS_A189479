@@ -73,10 +73,34 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_add_product_a189479.Designer.vb">
+      <DependentUpon>frm_add_product_a189479.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_add_product_a189479.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_customers_a189479.Designer.vb">
       <DependentUpon>frm_customers_a189479.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_customers_a189479.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_insert_customers_a189479.Designer.vb">
+      <DependentUpon>frm_insert_customers_a189479.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_insert_customers_a189479.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_insert_products_a189479.Designer.vb">
+      <DependentUpon>frm_insert_products_a189479.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_insert_products_a189479.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_insert_staff_a189479.Designer.vb">
+      <DependentUpon>frm_insert_staff_a189479.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_insert_staff_a189479.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_mainmenu_a189479.vb">
@@ -98,6 +122,12 @@
     <Compile Include="frm_products_a189479.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_product_details_a189479.Designer.vb">
+      <DependentUpon>frm_product_details_a189479.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_product_details_a189479.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_staffs_a189479.Designer.vb">
       <DependentUpon>frm_staffs_a189479.vb</DependentUpon>
     </Compile>
@@ -109,6 +139,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -122,6 +153,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frm_add_product_a189479.resx">
+      <DependentUpon>frm_add_product_a189479.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_customers_a189479.resx">
       <DependentUpon>frm_customers_a189479.vb</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_products_a189479.resx">
       <DependentUpon>frm_products_a189479.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_product_details_a189479.resx">
+      <DependentUpon>frm_product_details_a189479.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_staffs_a189479.resx">
       <DependentUpon>frm_staffs_a189479.vb</DependentUpon>
@@ -158,6 +195,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\elite_hoops_logo.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tj-dragotta-Gl0jBJJTDWs-unsplash.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

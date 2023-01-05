@@ -8,7 +8,7 @@
     End Sub
 
     Private Sub btn_view_products_Click(sender As Object, e As EventArgs) Handles btn_view_products.Click
-        frm_products_a189479.Show()
+        frm_product_details_a189479.Show()
         Me.Hide()
     End Sub
 
