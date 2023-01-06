@@ -1,6 +1,6 @@
 ﻿Public Class frm_staffs_a189479
-    Private Sub btn_back_mainmenu_Click(sender As Object, e As EventArgs) Handles btn_back_mainmenu.Click
-        frm_mainmenu_a189479.Show()
+    Private Sub btn_back_mainmenu_Click(sender As Object, e As EventArgs) Handles btn_back_details.Click
+        frm_staff_details_a189479.Show()
         Me.Hide()
     End Sub
 

@@ -85,10 +85,16 @@
     <Compile Include="frm_customers_a189479.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_insert_customers_a189479.Designer.vb">
-      <DependentUpon>frm_insert_customers_a189479.vb</DependentUpon>
+    <Compile Include="frm_customer_details_a189479.Designer.vb">
+      <DependentUpon>frm_customer_details_a189479.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_insert_customers_a189479.vb">
+    <Compile Include="frm_customer_details_a189479.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_insert_customer_a189479.Designer.vb">
+      <DependentUpon>frm_insert_customer_a189479.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_insert_customer_a189479.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_insert_products_a189479.Designer.vb">
@@ -164,6 +170,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_customers_a189479.resx">
       <DependentUpon>frm_customers_a189479.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_customer_details_a189479.resx">
+      <DependentUpon>frm_customer_details_a189479.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_insert_customer_a189479.resx">
+      <DependentUpon>frm_insert_customer_a189479.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_insert_staff_a189479.resx">
+      <DependentUpon>frm_insert_staff_a189479.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_mainmenu_a189479.resx">
       <DependentUpon>frm_mainmenu_a189479.vb</DependentUpon>

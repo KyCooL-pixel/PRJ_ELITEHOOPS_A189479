@@ -35,7 +35,7 @@ Partial Class frm_customers_a189479
         Me.btn_back_mainmenu.Name = "btn_back_mainmenu"
         Me.btn_back_mainmenu.Size = New System.Drawing.Size(151, 23)
         Me.btn_back_mainmenu.TabIndex = 5
-        Me.btn_back_mainmenu.Text = "Back to Main Menu"
+        Me.btn_back_mainmenu.Text = "Back to Details"
         Me.btn_back_mainmenu.UseVisualStyleBackColor = True
         '
         'lbl_customers

@@ -8,6 +8,7 @@
     Public Sub init()
         grd_product_view.DataSource = run_sql_query("SELECT * FROM TBL_PRODUCTS_A189479 order by fld_product_id")
         txt_product_id.Text = generate_matric()
+        dispose_pic_curr()
         currentImage = Image.FromFile(defaultpicture0)
         pic_product.Image = currentImage
         txt_product_name.Select()
@@ -48,9 +49,10 @@
             My.Computer.FileSystem.CopyFile(defaultpicture, "pictures\" & txt_product_id.Text & ".jpg")
 
             'Reset form status as like new baby
-            pic_product.Image = Image.FromFile(defaultpicture0)
+            dispose_pic_curr()
+            currentImage = Image.FromFile(defaultpicture0)
+            pic_product.Image = currentImage
             defaultpicture = defaultpicture0
-            currentImage.Dispose()
             refresh_grid()
             Beep()
             MsgBox($"You have successfully added the product {txt_product_id.Text}.")
@@ -71,9 +73,12 @@
             OpenFileDialog1.FileName = ""
             OpenFileDialog1.Filter = "JPG files (*.jpg)|*.jpg"
             OpenFileDialog1.ShowDialog()
-            currentImage = Image.FromFile(OpenFileDialog1.FileName)
-            pic_product.Image = currentImage
-            defaultpicture = OpenFileDialog1.FileName
+            If OpenFileDialog1.FileName?.Length > 0 Then
+                dispose_pic_curr()
+                currentImage = Image.FromFile(OpenFileDialog1.FileName)
+                pic_product.Image = currentImage
+                defaultpicture = OpenFileDialog1.FileName
+            End If
         Catch ex As Exception
             Beep()
             MsgBox("There is a mistake in selecting picture, as shown below" & vbCrLf & vbCrLf & ex.Message)
@@ -87,5 +92,18 @@
     Private Sub btn_back_to_details_Click(sender As Object, e As EventArgs) Handles btn_back_to_details.Click
         frm_product_details_a189479.Show()
         Me.Close()
+    End Sub
+
+    Private Sub clear_image()
+        If currentImage IsNot Nothing Then currentImage.Dispose()
+        currentImage = Nothing
+
+    End Sub
+
+    Private Sub dispose_pic_curr()
+        clear_image()
+        If pic_product.Image IsNot Nothing Then pic_product.Image.Dispose()
+        pic_product.Image = Nothing
+        pic_product.Refresh()
     End Sub
 End Class

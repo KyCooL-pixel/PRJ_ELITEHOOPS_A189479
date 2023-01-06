@@ -64,7 +64,7 @@ Partial Class frm_mainmenu_a189479
         Me.btn_view_products.Name = "btn_view_products"
         Me.btn_view_products.Size = New System.Drawing.Size(130, 40)
         Me.btn_view_products.TabIndex = 2
-        Me.btn_view_products.Text = "View Products"
+        Me.btn_view_products.Text = "Products"
         Me.btn_view_products.UseVisualStyleBackColor = True
         '
         'btn_view_customers
@@ -73,7 +73,7 @@ Partial Class frm_mainmenu_a189479
         Me.btn_view_customers.Name = "btn_view_customers"
         Me.btn_view_customers.Size = New System.Drawing.Size(130, 40)
         Me.btn_view_customers.TabIndex = 4
-        Me.btn_view_customers.Text = "View Customers"
+        Me.btn_view_customers.Text = "Customers"
         Me.btn_view_customers.UseVisualStyleBackColor = True
         '
         'btn_view_staff
@@ -82,7 +82,7 @@ Partial Class frm_mainmenu_a189479
         Me.btn_view_staff.Name = "btn_view_staff"
         Me.btn_view_staff.Size = New System.Drawing.Size(130, 40)
         Me.btn_view_staff.TabIndex = 5
-        Me.btn_view_staff.Text = "View Staffs"
+        Me.btn_view_staff.Text = "Staffs"
         Me.btn_view_staff.UseVisualStyleBackColor = True
         '
         'btn_exit

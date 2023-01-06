@@ -18,12 +18,12 @@
     End Sub
 
     Private Sub btn_view_customers_Click(sender As Object, e As EventArgs) Handles btn_view_customers.Click
-        frm_customers_a189479.Show()
+        frm_customer_details_a189479.Show()
         Me.Hide()
     End Sub
 
     Private Sub btn_view_staff_Click(sender As Object, e As EventArgs) Handles btn_view_staff.Click
-        frm_staffs_a189479.Show()
+        frm_staff_details_a189479.Show()
         Me.Hide()
     End Sub
 

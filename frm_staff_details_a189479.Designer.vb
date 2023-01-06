@@ -35,6 +35,7 @@ Partial Class frm_staff_details_a189479
         Me.btn_add_staff = New System.Windows.Forms.Button()
         Me.btn_delete_staff = New System.Windows.Forms.Button()
         Me.btn_view_staff_table = New System.Windows.Forms.Button()
+        Me.btn_back = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lbl_staff_details
@@ -79,7 +80,7 @@ Partial Class frm_staff_details_a189479
         Me.txt_staff_id.Location = New System.Drawing.Point(30, 92)
         Me.txt_staff_id.Name = "txt_staff_id"
         Me.txt_staff_id.ReadOnly = True
-        Me.txt_staff_id.Size = New System.Drawing.Size(203, 22)
+        Me.txt_staff_id.Size = New System.Drawing.Size(246, 22)
         Me.txt_staff_id.TabIndex = 2
         '
         'txt_staff_name
@@ -87,24 +88,25 @@ Partial Class frm_staff_details_a189479
         Me.txt_staff_name.Location = New System.Drawing.Point(30, 148)
         Me.txt_staff_name.Name = "txt_staff_name"
         Me.txt_staff_name.ReadOnly = True
-        Me.txt_staff_name.Size = New System.Drawing.Size(203, 22)
+        Me.txt_staff_name.Size = New System.Drawing.Size(246, 22)
         Me.txt_staff_name.TabIndex = 2
         '
         'cmb_staff_role
         '
+        Me.cmb_staff_role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_staff_role.Enabled = False
         Me.cmb_staff_role.FormattingEnabled = True
         Me.cmb_staff_role.Items.AddRange(New Object() {"Manager", "Sales", "Technical"})
         Me.cmb_staff_role.Location = New System.Drawing.Point(30, 220)
         Me.cmb_staff_role.Name = "cmb_staff_role"
-        Me.cmb_staff_role.Size = New System.Drawing.Size(203, 24)
+        Me.cmb_staff_role.Size = New System.Drawing.Size(246, 24)
         Me.cmb_staff_role.TabIndex = 3
         '
         'btn_update_staff
         '
-        Me.btn_update_staff.Location = New System.Drawing.Point(30, 361)
+        Me.btn_update_staff.Location = New System.Drawing.Point(124, 361)
         Me.btn_update_staff.Name = "btn_update_staff"
-        Me.btn_update_staff.Size = New System.Drawing.Size(90, 23)
+        Me.btn_update_staff.Size = New System.Drawing.Size(72, 23)
         Me.btn_update_staff.TabIndex = 4
         Me.btn_update_staff.Text = "Update"
         Me.btn_update_staff.UseVisualStyleBackColor = True
@@ -112,9 +114,9 @@ Partial Class frm_staff_details_a189479
         'btn_save_staff
         '
         Me.btn_save_staff.Enabled = False
-        Me.btn_save_staff.Location = New System.Drawing.Point(143, 361)
+        Me.btn_save_staff.Location = New System.Drawing.Point(202, 361)
         Me.btn_save_staff.Name = "btn_save_staff"
-        Me.btn_save_staff.Size = New System.Drawing.Size(90, 23)
+        Me.btn_save_staff.Size = New System.Drawing.Size(74, 23)
         Me.btn_save_staff.TabIndex = 4
         Me.btn_save_staff.Text = "Save"
         Me.btn_save_staff.UseVisualStyleBackColor = True
@@ -155,11 +157,21 @@ Partial Class frm_staff_details_a189479
         Me.btn_view_staff_table.Text = "Table View"
         Me.btn_view_staff_table.UseVisualStyleBackColor = True
         '
+        'btn_back
+        '
+        Me.btn_back.Location = New System.Drawing.Point(30, 361)
+        Me.btn_back.Name = "btn_back"
+        Me.btn_back.Size = New System.Drawing.Size(56, 23)
+        Me.btn_back.TabIndex = 8
+        Me.btn_back.Text = "Back"
+        Me.btn_back.UseVisualStyleBackColor = True
+        '
         'frm_staff_details_a189479
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(578, 396)
+        Me.Controls.Add(Me.btn_back)
         Me.Controls.Add(Me.btn_view_staff_table)
         Me.Controls.Add(Me.btn_delete_staff)
         Me.Controls.Add(Me.btn_add_staff)
@@ -193,4 +205,5 @@ Partial Class frm_staff_details_a189479
     Friend WithEvents btn_add_staff As Button
     Friend WithEvents btn_delete_staff As Button
     Friend WithEvents btn_view_staff_table As Button
+    Friend WithEvents btn_back As Button
 End Class

@@ -38,6 +38,7 @@
         txt_year.Text = mytable.Rows(0).Item("fld_warrantylength")
         Try
             curr_picture_path = $"pictures\{txt_product_id.Text}.jpg"
+            dispose_pic_curr()
             currentImage = Image.FromFile(curr_picture_path)
             pic_product.Image = currentImage
         Catch ex As Exception
@@ -69,9 +70,7 @@
         'Dont update picture if it is the same file (no changes made) by comparing the path
         If new_picture_path IsNot Nothing Then
             If System.IO.File.Exists($"pictures\{txt_product_id.Text}.jpg") Then
-                pic_product.Image.Dispose()
-                'pic_product.Image = Nothing
-                clear_image()
+                dispose_pic_curr()
                 System.IO.File.Delete($"pictures\{txt_product_id.Text}.jpg")
             End If
             My.Computer.FileSystem.CopyFile(new_picture_path, ($"pictures\{txt_product_id.Text}.jpg"))
@@ -133,7 +132,7 @@
 
     Private Sub dispose_pic_curr()
         clear_image()
-        pic_product.Image.Dispose()
+        If pic_product.Image IsNot Nothing Then pic_product.Image.Dispose()
         pic_product.Image = Nothing
         pic_product.Refresh()
     End Sub

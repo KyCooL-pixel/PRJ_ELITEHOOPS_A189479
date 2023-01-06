@@ -8,7 +8,7 @@
     End Sub
 
     Private Sub btn_back_mainmenu_Click(sender As Object, e As EventArgs) Handles btn_back_mainmenu.Click
-        frm_mainmenu_a189479.Show()
+        frm_customer_details_a189479.Show()
         Me.Hide()
     End Sub
 End Class

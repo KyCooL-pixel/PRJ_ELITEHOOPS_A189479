@@ -68,4 +68,13 @@
         End If
         init()
     End Sub
+
+    Private Sub btn_add_staff_Click(sender As Object, e As EventArgs) Handles btn_add_staff.Click
+        frm_insert_staff_a189479.Show()
+    End Sub
+
+    Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
+        frm_mainmenu_a189479.Show()
+        Me.Hide()
+    End Sub
 End Class

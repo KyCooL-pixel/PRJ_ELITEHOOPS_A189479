@@ -51,3 +51,6 @@ C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\obj\Debug\PRJ_ELITEHOOPS_A189479.
 C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\obj\Debug\PRJ_ELITEHOOPS_A189479.xml
 C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\obj\Debug\PRJ_ELITEHOOPS_A189479.pdb
 C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\obj\Debug\PRJ_ELITEHOOPS_A189479.frm_staff_details_a189479.resources
+C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\obj\Debug\PRJ_ELITEHOOPS_A189479.frm_insert_staff_a189479.resources
+C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\obj\Debug\PRJ_ELITEHOOPS_A189479.frm_customer_details_a189479.resources
+C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\obj\Debug\PRJ_ELITEHOOPS_A189479.frm_insert_customer_a189479.resources

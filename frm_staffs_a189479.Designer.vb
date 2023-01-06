@@ -22,21 +22,21 @@ Partial Class frm_staffs_a189479
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btn_back_mainmenu = New System.Windows.Forms.Button()
+        Me.btn_back_details = New System.Windows.Forms.Button()
         Me.lbl_staffs = New System.Windows.Forms.Label()
         Me.grd_staffs = New System.Windows.Forms.DataGridView()
         CType(Me.grd_staffs, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'btn_back_mainmenu
+        'btn_back_details
         '
-        Me.btn_back_mainmenu.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_back_mainmenu.Location = New System.Drawing.Point(612, 412)
-        Me.btn_back_mainmenu.Name = "btn_back_mainmenu"
-        Me.btn_back_mainmenu.Size = New System.Drawing.Size(151, 23)
-        Me.btn_back_mainmenu.TabIndex = 8
-        Me.btn_back_mainmenu.Text = "Back to Main Menu"
-        Me.btn_back_mainmenu.UseVisualStyleBackColor = True
+        Me.btn_back_details.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_back_details.Location = New System.Drawing.Point(612, 412)
+        Me.btn_back_details.Name = "btn_back_details"
+        Me.btn_back_details.Size = New System.Drawing.Size(151, 23)
+        Me.btn_back_details.TabIndex = 8
+        Me.btn_back_details.Text = "Back to Details"
+        Me.btn_back_details.UseVisualStyleBackColor = True
         '
         'lbl_staffs
         '
@@ -67,7 +67,7 @@ Partial Class frm_staffs_a189479
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.btn_back_mainmenu)
+        Me.Controls.Add(Me.btn_back_details)
         Me.Controls.Add(Me.lbl_staffs)
         Me.Controls.Add(Me.grd_staffs)
         Me.Name = "frm_staffs_a189479"
@@ -78,7 +78,7 @@ Partial Class frm_staffs_a189479
 
     End Sub
 
-    Friend WithEvents btn_back_mainmenu As Button
+    Friend WithEvents btn_back_details As Button
     Friend WithEvents lbl_staffs As Label
     Friend WithEvents grd_staffs As DataGridView
 End Class
