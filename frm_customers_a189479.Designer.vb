@@ -50,6 +50,8 @@ Partial Class frm_customers_a189479
         '
         'grd_customers
         '
+        Me.grd_customers.AllowUserToAddRows = False
+        Me.grd_customers.AllowUserToDeleteRows = False
         Me.grd_customers.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)

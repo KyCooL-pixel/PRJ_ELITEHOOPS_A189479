@@ -33,6 +33,7 @@
     End Sub
 
     Private Sub to_enable_edit(state As Boolean)
+        btn_back.Enabled = Not state
         btn_add_staff.Enabled = Not state
         btn_delete_staff.Enabled = Not state
         btn_save_staff.Enabled = state

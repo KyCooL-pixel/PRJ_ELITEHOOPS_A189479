@@ -25,7 +25,6 @@ Partial Class frm_product_details_a189479
         Me.btn_delete_product = New System.Windows.Forms.Button()
         Me.btn_new_product = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.pic_product = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -47,6 +46,7 @@ Partial Class frm_product_details_a189479
         Me.btn_change_picture = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.btn_table_view = New System.Windows.Forms.Button()
+        Me.pic_product = New System.Windows.Forms.PictureBox()
         CType(Me.pic_product, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -76,17 +76,6 @@ Partial Class frm_product_details_a189479
         Me.Label1.Size = New System.Drawing.Size(21, 17)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "ID"
-        '
-        'pic_product
-        '
-        Me.pic_product.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pic_product.Enabled = False
-        Me.pic_product.Location = New System.Drawing.Point(26, 56)
-        Me.pic_product.Name = "pic_product"
-        Me.pic_product.Size = New System.Drawing.Size(215, 226)
-        Me.pic_product.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pic_product.TabIndex = 3
-        Me.pic_product.TabStop = False
         '
         'Label2
         '
@@ -275,6 +264,17 @@ Partial Class frm_product_details_a189479
         Me.btn_table_view.Text = "Table View"
         Me.btn_table_view.UseVisualStyleBackColor = True
         '
+        'pic_product
+        '
+        Me.pic_product.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.pic_product.Enabled = False
+        Me.pic_product.Location = New System.Drawing.Point(26, 56)
+        Me.pic_product.Name = "pic_product"
+        Me.pic_product.Size = New System.Drawing.Size(215, 226)
+        Me.pic_product.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pic_product.TabIndex = 3
+        Me.pic_product.TabStop = False
+        '
         'frm_product_details_a189479
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -305,7 +305,7 @@ Partial Class frm_product_details_a189479
         Me.Controls.Add(Me.btn_new_product)
         Me.Controls.Add(Me.btn_delete_product)
         Me.Name = "frm_product_details_a189479"
-        Me.Text = "frm_product_details_a189479"
+        Me.Text = "Products"
         CType(Me.pic_product, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -50,6 +50,8 @@ Partial Class frm_staffs_a189479
         '
         'grd_staffs
         '
+        Me.grd_staffs.AllowUserToAddRows = False
+        Me.grd_staffs.AllowUserToDeleteRows = False
         Me.grd_staffs.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -57,6 +59,7 @@ Partial Class frm_staffs_a189479
         Me.grd_staffs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grd_staffs.Location = New System.Drawing.Point(12, 52)
         Me.grd_staffs.Name = "grd_staffs"
+        Me.grd_staffs.ReadOnly = True
         Me.grd_staffs.RowHeadersWidth = 51
         Me.grd_staffs.RowTemplate.Height = 24
         Me.grd_staffs.Size = New System.Drawing.Size(776, 341)
