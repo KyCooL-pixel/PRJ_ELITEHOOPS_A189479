@@ -1,4 +1,5 @@
 ﻿Module mod_globals_a189479
+    Public defaultpicture0 As String = Application.StartupPath & "\pictures\elite_hoops_logo.jpeg"
     Public githubLink As String = "https://github.com/KyCooL-pixel/PRJ_ELITEHOOPS_A189479"
     Public connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=DB_ELITEHOOPS_A189479.accdb;Persist Security Info=False;"
     Public connectionString2 As New OleDb.OleDbConnection(connectionString)

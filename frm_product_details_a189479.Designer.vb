@@ -44,6 +44,9 @@ Partial Class frm_product_details_a189479
         Me.btn_save_product = New System.Windows.Forms.Button()
         Me.txt_product_name = New System.Windows.Forms.RichTextBox()
         Me.btn_back_main_menu = New System.Windows.Forms.Button()
+        Me.btn_change_picture = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.btn_table_view = New System.Windows.Forms.Button()
         CType(Me.pic_product, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -77,9 +80,11 @@ Partial Class frm_product_details_a189479
         'pic_product
         '
         Me.pic_product.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.pic_product.Enabled = False
         Me.pic_product.Location = New System.Drawing.Point(26, 56)
         Me.pic_product.Name = "pic_product"
-        Me.pic_product.Size = New System.Drawing.Size(215, 250)
+        Me.pic_product.Size = New System.Drawing.Size(215, 226)
+        Me.pic_product.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pic_product.TabIndex = 3
         Me.pic_product.TabStop = False
         '
@@ -221,6 +226,7 @@ Partial Class frm_product_details_a189479
         '
         'btn_save_product
         '
+        Me.btn_save_product.Enabled = False
         Me.btn_save_product.Location = New System.Drawing.Point(464, 482)
         Me.btn_save_product.Name = "btn_save_product"
         Me.btn_save_product.Size = New System.Drawing.Size(110, 28)
@@ -246,11 +252,36 @@ Partial Class frm_product_details_a189479
         Me.btn_back_main_menu.Text = "Back"
         Me.btn_back_main_menu.UseVisualStyleBackColor = True
         '
+        'btn_change_picture
+        '
+        Me.btn_change_picture.Enabled = False
+        Me.btn_change_picture.Location = New System.Drawing.Point(88, 288)
+        Me.btn_change_picture.Name = "btn_change_picture"
+        Me.btn_change_picture.Size = New System.Drawing.Size(83, 27)
+        Me.btn_change_picture.TabIndex = 23
+        Me.btn_change_picture.Text = "change"
+        Me.btn_change_picture.UseVisualStyleBackColor = True
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'btn_table_view
+        '
+        Me.btn_table_view.Location = New System.Drawing.Point(723, 27)
+        Me.btn_table_view.Name = "btn_table_view"
+        Me.btn_table_view.Size = New System.Drawing.Size(184, 23)
+        Me.btn_table_view.TabIndex = 24
+        Me.btn_table_view.Text = "Table View"
+        Me.btn_table_view.UseVisualStyleBackColor = True
+        '
         'frm_product_details_a189479
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(939, 531)
+        Me.Controls.Add(Me.btn_table_view)
+        Me.Controls.Add(Me.btn_change_picture)
         Me.Controls.Add(Me.btn_back_main_menu)
         Me.Controls.Add(Me.btn_save_product)
         Me.Controls.Add(Me.lst_productid)
@@ -302,4 +333,7 @@ Partial Class frm_product_details_a189479
     Friend WithEvents btn_save_product As Button
     Friend WithEvents txt_product_name As RichTextBox
     Friend WithEvents btn_back_main_menu As Button
+    Friend WithEvents btn_change_picture As Button
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents btn_table_view As Button
 End Class

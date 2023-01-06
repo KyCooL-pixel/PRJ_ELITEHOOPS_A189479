@@ -44,6 +44,7 @@ Partial Class frm_add_product_a189479
         Me.btn_select_picture = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.btn_back_to_details = New System.Windows.Forms.Button()
+        Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         CType(Me.grd_product_view, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pic_product, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -207,7 +208,7 @@ Partial Class frm_add_product_a189479
         Me.pic_product.Location = New System.Drawing.Point(474, 69)
         Me.pic_product.Name = "pic_product"
         Me.pic_product.Size = New System.Drawing.Size(215, 236)
-        Me.pic_product.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.pic_product.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pic_product.TabIndex = 14
         Me.pic_product.TabStop = False
         '
@@ -232,6 +233,10 @@ Partial Class frm_add_product_a189479
         Me.btn_back_to_details.TabIndex = 16
         Me.btn_back_to_details.Text = "Back"
         Me.btn_back_to_details.UseVisualStyleBackColor = True
+        '
+        'OpenFileDialog2
+        '
+        Me.OpenFileDialog2.FileName = "OpenFileDialog2"
         '
         'frm_add_product_a189479
         '
@@ -290,4 +295,5 @@ Partial Class frm_add_product_a189479
     Friend WithEvents btn_select_picture As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents btn_back_to_details As Button
+    Friend WithEvents OpenFileDialog2 As OpenFileDialog
 End Class

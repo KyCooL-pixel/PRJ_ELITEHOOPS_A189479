@@ -24,12 +24,14 @@ Partial Class frm_products_a189479
     Private Sub InitializeComponent()
         Me.grd_products = New System.Windows.Forms.DataGridView()
         Me.lbl_products = New System.Windows.Forms.Label()
-        Me.btn_back_mainmenu = New System.Windows.Forms.Button()
+        Me.btn_back_details = New System.Windows.Forms.Button()
         CType(Me.grd_products, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'grd_products
         '
+        Me.grd_products.AllowUserToAddRows = False
+        Me.grd_products.AllowUserToDeleteRows = False
         Me.grd_products.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -53,22 +55,22 @@ Partial Class frm_products_a189479
         Me.lbl_products.TabIndex = 1
         Me.lbl_products.Text = "Products"
         '
-        'btn_back_mainmenu
+        'btn_back_details
         '
-        Me.btn_back_mainmenu.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_back_mainmenu.Location = New System.Drawing.Point(612, 405)
-        Me.btn_back_mainmenu.Name = "btn_back_mainmenu"
-        Me.btn_back_mainmenu.Size = New System.Drawing.Size(151, 23)
-        Me.btn_back_mainmenu.TabIndex = 2
-        Me.btn_back_mainmenu.Text = "Back to Main Menu"
-        Me.btn_back_mainmenu.UseVisualStyleBackColor = True
+        Me.btn_back_details.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_back_details.Location = New System.Drawing.Point(612, 405)
+        Me.btn_back_details.Name = "btn_back_details"
+        Me.btn_back_details.Size = New System.Drawing.Size(151, 23)
+        Me.btn_back_details.TabIndex = 2
+        Me.btn_back_details.Text = "Back to Details"
+        Me.btn_back_details.UseVisualStyleBackColor = True
         '
         'frm_products_a189479
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.btn_back_mainmenu)
+        Me.Controls.Add(Me.btn_back_details)
         Me.Controls.Add(Me.lbl_products)
         Me.Controls.Add(Me.grd_products)
         Me.Name = "frm_products_a189479"
@@ -81,5 +83,5 @@ Partial Class frm_products_a189479
 
     Friend WithEvents grd_products As DataGridView
     Friend WithEvents lbl_products As Label
-    Friend WithEvents btn_back_mainmenu As Button
+    Friend WithEvents btn_back_details As Button
 End Class

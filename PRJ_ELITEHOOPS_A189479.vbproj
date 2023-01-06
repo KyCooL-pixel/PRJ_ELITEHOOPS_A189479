@@ -134,6 +134,12 @@
     <Compile Include="frm_staffs_a189479.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_staff_details_a189479.Designer.vb">
+      <DependentUpon>frm_staff_details_a189479.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_staff_details_a189479.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="mod_globals_a189479.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_staffs_a189479.resx">
       <DependentUpon>frm_staffs_a189479.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_staff_details_a189479.resx">
+      <DependentUpon>frm_staff_details_a189479.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

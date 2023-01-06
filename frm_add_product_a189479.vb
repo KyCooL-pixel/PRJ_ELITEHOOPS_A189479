@@ -1,10 +1,15 @@
 ﻿Public Class frm_add_product_a189479
-    Dim defaultpicture0 As String = Application.StartupPath & "\pictures\elite_hoops_logo.jpeg"
     Dim defaultpicture As String = defaultpicture0
+    Dim currentImage As Image
     Private Sub frm_add_product_a189479_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        init()
+    End Sub
+
+    Public Sub init()
         grd_product_view.DataSource = run_sql_query("SELECT * FROM TBL_PRODUCTS_A189479 order by fld_product_id")
         txt_product_id.Text = generate_matric()
-        pic_product.BackgroundImage = Image.FromFile(defaultpicture0)
+        currentImage = Image.FromFile(defaultpicture0)
+        pic_product.Image = currentImage
         txt_product_name.Select()
     End Sub
 
@@ -35,9 +40,20 @@
             mywriter.Connection.Open()
             mywriter.ExecuteNonQuery()
             mywriter.Connection.Close()
+            'This will allow overwriting in updating by deleting the current jpg with the name
+            If System.IO.File.Exists($"pictures\{txt_product_id.Text}.jpg") = True Then
+                System.IO.File.Delete($"pictures\{txt_product_id.Text}.jpg")
+            End If
+            'adds a new jpg
             My.Computer.FileSystem.CopyFile(defaultpicture, "pictures\" & txt_product_id.Text & ".jpg")
-            pic_product.BackgroundImage = Image.FromFile(defaultpicture)
+
+            'Reset form status as like new baby
+            pic_product.Image = Image.FromFile(defaultpicture0)
+            defaultpicture = defaultpicture0
+            currentImage.Dispose()
             refresh_grid()
+            Beep()
+            MsgBox($"You have successfully added the product {txt_product_id.Text}.")
             clear_fields()
             txt_product_id.Text = generate_matric()
             frm_product_details_a189479.init()
@@ -55,7 +71,8 @@
             OpenFileDialog1.FileName = ""
             OpenFileDialog1.Filter = "JPG files (*.jpg)|*.jpg"
             OpenFileDialog1.ShowDialog()
-            pic_product.BackgroundImage = Image.FromFile(OpenFileDialog1.FileName)
+            currentImage = Image.FromFile(OpenFileDialog1.FileName)
+            pic_product.Image = currentImage
             defaultpicture = OpenFileDialog1.FileName
         Catch ex As Exception
             Beep()
@@ -69,6 +86,6 @@
 
     Private Sub btn_back_to_details_Click(sender As Object, e As EventArgs) Handles btn_back_to_details.Click
         frm_product_details_a189479.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 End Class
