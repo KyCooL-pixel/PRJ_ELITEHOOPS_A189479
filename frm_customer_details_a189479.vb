@@ -52,7 +52,7 @@
         run_sql_command($"UPDATE TBL_CUSTOMERS_A189479 SET fld_customer_name='{txt_customer_name.Text}' WHERE fld_customer_id='{txt_customer_id.Text}'")
         run_sql_command($"UPDATE TBL_CUSTOMERS_A189479 SET fld_customer_tier='{cmb_customer_tier.Text}' WHERE fld_customer_id='{txt_customer_id.Text}'")
         Beep()
-        MsgBox($"You have successfully updated the product '{txt_customer_id.Text}'.")
+        MsgBox($"You have successfully updated the customer '{txt_customer_id.Text}'.")
     End Sub
 
     Private Sub btn_view_customer_table_Click(sender As Object, e As EventArgs) Handles btn_view_customer_table.Click
@@ -61,7 +61,7 @@
     End Sub
 
     Private Sub btn_delete_staff_Click(sender As Object, e As EventArgs) Handles btn_delete_staff.Click
-        Dim delete_confirmation = MsgBox($"Are you sure you would like to delete this product {txt_customer_id.Text}?", MsgBoxStyle.YesNo)
+        Dim delete_confirmation = MsgBox($"Are you sure you would like to delete this customer {txt_customer_id.Text}?", MsgBoxStyle.YesNo)
         If delete_confirmation = MsgBoxResult.Yes Then
             run_sql_command($"DELETE FROM TBL_CUSTOMERS_A189479 WHERE fld_customer_id='{txt_customer_id.Text}'")
         End If

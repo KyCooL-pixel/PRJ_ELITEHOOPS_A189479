@@ -186,7 +186,7 @@ Partial Class frm_staff_details_a189479
         Me.Controls.Add(Me.lbl_staff_id)
         Me.Controls.Add(Me.lbl_staff_details)
         Me.Name = "frm_staff_details_a189479"
-        Me.Text = "frm_staff_details"
+        Me.Text = "Staffs"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

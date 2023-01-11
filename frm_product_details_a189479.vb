@@ -149,6 +149,7 @@
                 dispose_pic_curr()
                 currentImage = Image.FromFile(OpenFileDialog1.FileName)
                 pic_product.Image = currentImage
+                new_picture_path = OpenFileDialog1.FileName
             End If
 
         Catch ex As Exception

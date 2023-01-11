@@ -29,7 +29,7 @@
         run_sql_command($"INSERT INTO TBL_CUSTOMERS_A189479 VALUES('{txt_customer_id.Text}','{txt_customer_name.Text}','{txt_customer_address.Text}','{txt_customer_number.Text}','{cmb_customer_tier.Text}')")
         refresh_grid()
         Beep()
-        MsgBox($"You have successfully added the staff {txt_customer_id.Text}: {txt_customer_name.Text}.")
+        MsgBox($"You have successfully added the customer {txt_customer_id.Text}: {txt_customer_name.Text}.")
         clear_fields()
         txt_customer_id.Text = generate_matric()
         frm_customer_details_a189479.init()

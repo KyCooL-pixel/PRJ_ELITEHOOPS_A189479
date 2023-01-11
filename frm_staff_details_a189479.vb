@@ -54,7 +54,7 @@
         run_sql_command($"UPDATE TBL_STAFFS_A189479 SET FLD_STAFF_NAME='{txt_staff_name.Text}' WHERE FLD_STAFF_ID='{txt_staff_id.Text}'")
         run_sql_command($"UPDATE TBL_STAFFS_A189479 SET FLD_STAFF_ROLE='{cmb_staff_role.Text}' WHERE FLD_STAFF_ID='{txt_staff_id.Text}'")
         Beep()
-        MsgBox($"You have successfully updated the product '{txt_staff_id.Text}'.")
+        MsgBox($"You have successfully updated the staff '{txt_staff_id.Text}'.")
     End Sub
 
     Private Sub btn_view_staff_table_Click(sender As Object, e As EventArgs) Handles btn_view_staff_table.Click
@@ -63,7 +63,7 @@
     End Sub
 
     Private Sub btn_delete_staff_Click(sender As Object, e As EventArgs) Handles btn_delete_staff.Click
-        Dim delete_confirmation = MsgBox($"Are you sure you would like to delete this product {txt_staff_id.Text}?", MsgBoxStyle.YesNo)
+        Dim delete_confirmation = MsgBox($"Are you sure you would like to delete this staff {txt_staff_id.Text}?", MsgBoxStyle.YesNo)
         If delete_confirmation = MsgBoxResult.Yes Then
             run_sql_command($"DELETE FROM TBL_STAFFS_A189479 WHERE FLD_STAFF_ID='{txt_staff_id.Text}'")
         End If

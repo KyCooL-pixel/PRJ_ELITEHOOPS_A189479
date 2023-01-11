@@ -228,7 +228,7 @@ Partial Class frm_customer_details_a189479
         Me.Controls.Add(Me.lbl_customer_id)
         Me.Controls.Add(Me.lbl_customer_details)
         Me.Name = "frm_customer_details_a189479"
-        Me.Text = "frm_customer_details_a189479"
+        Me.Text = "Customers"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
