@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_add_order_a189479.Designer.vb">
+      <DependentUpon>frm_add_order_a189479.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_add_order_a189479.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_add_product_a189479.Designer.vb">
       <DependentUpon>frm_add_product_a189479.vb</DependentUpon>
     </Compile>
@@ -165,6 +171,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frm_add_order_a189479.resx">
+      <DependentUpon>frm_add_order_a189479.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_add_product_a189479.resx">
       <DependentUpon>frm_add_product_a189479.vb</DependentUpon>
     </EmbeddedResource>

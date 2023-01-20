@@ -28,7 +28,7 @@
     End Sub
 
     Private Sub btn_view_orders_Click(sender As Object, e As EventArgs) Handles btn_view_orders.Click
-        frm_orders_a189479.Show()
+        frm_add_order_a189479.Show()
         Me.Hide()
     End Sub
 

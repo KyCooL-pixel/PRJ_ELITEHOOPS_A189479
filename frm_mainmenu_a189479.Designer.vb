@@ -118,7 +118,7 @@ Partial Class frm_mainmenu_a189479
         Me.btn_view_orders.Name = "btn_view_orders"
         Me.btn_view_orders.Size = New System.Drawing.Size(130, 40)
         Me.btn_view_orders.TabIndex = 3
-        Me.btn_view_orders.Text = "View Orders"
+        Me.btn_view_orders.Text = "Orders"
         Me.btn_view_orders.UseVisualStyleBackColor = True
         '
         'frm_mainmenu_a189479
