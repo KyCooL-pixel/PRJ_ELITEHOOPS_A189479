@@ -220,6 +220,7 @@ Partial Class frm_add_order_a189479
         Me.grd_cart_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grd_cart_view.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fld_product_id, Me.fld_product_name, Me.fld_product_quantity, Me.fld_product_total_price})
         Me.grd_cart_view.Location = New System.Drawing.Point(12, 37)
+        Me.grd_cart_view.MultiSelect = False
         Me.grd_cart_view.Name = "grd_cart_view"
         Me.grd_cart_view.RowHeadersWidth = 51
         Me.grd_cart_view.RowTemplate.Height = 24

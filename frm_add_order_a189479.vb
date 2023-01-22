@@ -187,8 +187,8 @@
     End Sub
     Private Function generate_order_id()
         If orderTable.Rows.Count > 0 Then
-            Dim lastorderid As String = orderTable.Rows(0).Item("fld_order_id")
-            'MsgBox(lastmatric)
+            Dim lastorderid As String = orderTable.Rows(orderTable.Rows.Count - 1).Item("fld_order_id")
+            'MsgBox(lastmatric)l
             Dim neworderid As String = "K0" & Mid(lastorderid, 2) + 1
             Return neworderid
         Else
@@ -241,18 +241,45 @@
     End Sub
 
     Private Sub btn_checkout_Click(sender As Object, e As EventArgs) Handles btn_checkout.Click
-        Dim order_confirmation = MsgBox($"Are you sure you want to order", MsgBoxStyle.YesNo)
+        Dim order_confirmation = MsgBox($"Are you sure you want to order ?", MsgBoxStyle.YesNo)
+        'If confirm order
         If order_confirmation = MsgBoxResult.Yes Then
-            run_sql_command($"insert into tbl_order")
-            reset_ids()
-            reset_fields()
-            cmb_staff_id.Enabled = True
-            cmb_customer_id.Enabled = True
-            clear_cart()
+            Try
+                Dim mytransaction As OleDb.OleDbTransaction
+                connectionString2.Open()
+                mytransaction = connectionString2.BeginTransaction
+                'insert into order table first
+                Dim ordersql As String = $"insert into tbl_order_a189479 values('{lbl_order_id_data.Text}','{cmb_staff_id.Text}','{cmb_customer_id.Text}')"
+                Dim orderwriter As New OleDb.OleDbCommand(ordersql, connectionString2, mytransaction)
+                orderwriter.ExecuteNonQuery()
+                'insert into orderlist row by row
+                For i As Integer = 0 To grd_cart_view.Rows.Count - 1
+                    Dim mysql As String = $"insert into tbl_orderlist_a189479 values('{lbl_order_id_data.Text}','{grd_cart_view.Rows(i).Cells(0).Value}',{grd_cart_view.Rows(i).Cells(2).Value})"
+                    Dim mywriter As New OleDb.OleDbCommand(mysql, connectionString2, mytransaction)
+                    mywriter.ExecuteNonQuery()
+                Next
+                mytransaction.Commit()
+                connectionString2.Close()
+                ' reset all the fields, ready for next order
+                MsgBox("Order Successed!!")
+                cmb_staff_id.Enabled = True
+                cmb_customer_id.Enabled = True
+                clear_cart()
+                init()
+            Catch
+                Beep()
+                MsgBox("Please add a product first!!")
+            End Try
         End If
-        Beep()
-        MsgBox("Order is cleared")
-        init()
+    End Sub
 
+    'catch user deleting rows and rerender the cart total price
+    Private Sub dgv_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles grd_cart_view.KeyDown
+        If e.KeyValue = 46 Then
+            Dim j As Integer
+            grd_cart_view.Rows.RemoveAt(grd_cart_view.SelectedCells(j).RowIndex)
+            Application.DoEvents()
+            render_cart_total()
+        End If
     End Sub
 End Class

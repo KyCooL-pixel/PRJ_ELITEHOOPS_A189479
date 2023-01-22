@@ -106,4 +106,7 @@
         pic_product.Image = Nothing
         pic_product.Refresh()
     End Sub
+
+    'update the price when user deletes a row
+
 End Class
