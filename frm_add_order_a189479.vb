@@ -6,22 +6,39 @@
     Dim orderTable As New DataTable
     Dim orderListTable As New DataTable
 
+    'Control states to be updated as development goes on
+    Dim staffSelected As New Boolean
+    Dim customerSelected As New Boolean
+    Dim productSelected As New Boolean
+    Dim isCartEmpty As New Boolean
+
+    'Declare var String for pic path
+    Dim curr_picture_path As String
+
+    'Declare dummy pic var for pic
+    Dim currentImage As Image
+
     Dim totalprice As New Double
+    Dim cartTotal As New Double
     Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
         'maybe handle transcation end here also
+        ' Rerolling transcation
         frm_mainmenu_a189479.Show()
-        Me.Hide()
+        dispose_pic_curr()
+        Me.Close()
     End Sub
 
     Private Sub frm_add_order_a189479_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         init()
     End Sub
 
+    'wrap onload function into a init function incase it is needed to be call explicitly from other forms
+    'Note: closing the form everytime its not used will call onload everytime, seems legit and cleaner instead of calling init()
     Public Sub init()
         'fill datatable from database
         staffTable = run_sql_query("SELECT * FROM TBL_STAFFS_A189479 ORDER BY FLD_STAFF_ID")
-        productTable = run_sql_query("Select * from tbl_products_a189479")
-        customerTable = run_sql_query("Select * from tbl_customers_a189479")
+        productTable = run_sql_query("Select * from tbl_products_a189479 order by fld_product_id")
+        customerTable = run_sql_query("Select * from tbl_customers_a189479 order by fld_customer_id")
         orderTable = run_sql_query($"SELECT * FROM TBL_ORDER_A189479 ORDER BY FLD_ORDER_ID")
 
         'fill combobox with values
@@ -49,25 +66,44 @@
 
         'makes the default value of comboboxes and the display fields null
         lbl_order_id_data.Text = generate_order_id()
+        'starts with empty field
         reset_ids()
         reset_fields()
+        cmb_staff_id.Enabled = True
+        cmb_customer_id.Enabled = True
 
     End Sub
 
     Private Sub cmb_staff_id_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_staff_id.SelectedIndexChanged
         If cmb_staff_id.SelectedItem IsNot Nothing Then
             txt_staff_name.Text = staffTable.Rows(cmb_staff_id.SelectedIndex).Item(1).ToString
+            staffSelected = True
+            cmb_staff_id.Enabled = False
+            cmb_customer_id.Select()
         End If
     End Sub
     Private Sub cmb_customer_id_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_customer_id.SelectedIndexChanged
         If cmb_customer_id.SelectedItem IsNot Nothing Then
             txt_customer_name.Text = customerTable.Rows(cmb_customer_id.SelectedIndex).Item(1).ToString
+            customerSelected = True
+            cmb_customer_id.Enabled = False
+            cmb_product_id.Select()
         End If
     End Sub
 
     Private Sub btn_restart_Click(sender As Object, e As EventArgs) Handles btn_restart.Click
-        reset_ids()
-        reset_fields()
+        Dim delete_confirmation = MsgBox($"Are you sure you would like to remake the order? Everything will be cleared including cart", MsgBoxStyle.YesNo)
+        If delete_confirmation = MsgBoxResult.Yes Then
+            reset_ids()
+            reset_fields()
+            cmb_staff_id.Enabled = True
+            cmb_customer_id.Enabled = True
+            clear_cart()
+        End If
+        Beep()
+        MsgBox("Order is cleared")
+        init()
+
     End Sub
 
     Private Sub cmb_product_id_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_product_id.SelectedIndexChanged
@@ -77,7 +113,10 @@
             txt_product_price.Text = productTable.Rows(cmb_product_id.SelectedIndex).Item(2).ToString
             txt_product_brand.Text = productTable.Rows(cmb_product_id.SelectedIndex).Item(3).ToString
             txt_product_type.Text = productTable.Rows(cmb_product_id.SelectedIndex).Item(4).ToString
+            'Prevent user from changing the quantity without a product
             updown_quantity.Enabled = True
+            calc_product_total()
+            productSelected = True
         End If
     End Sub
 
@@ -92,21 +131,48 @@
         txt_product_price.Text = ""
         txt_product_brand.Text = ""
         txt_product_type.Text = ""
-        updown_quantity.Value = 0
+        updown_quantity.Value = 1
         updown_quantity.Enabled = False
         txt_product_total.Text = "0.00"
+        Try
+            curr_picture_path = $"pictures\{cmb_product_id.Text}.jpg"
+            dispose_pic_curr()
+            currentImage = Image.FromFile(curr_picture_path)
+            pic_product.Image = currentImage
+        Catch ex As Exception
+            pic_product.Image = Image.FromFile("pictures/elite_hoops_logo.jpeg")
+        End Try
     End Sub
 
     Private Sub reset_ids()
         cmb_staff_id.SelectedItem = Nothing
         cmb_customer_id.SelectedItem = Nothing
+        staffSelected = False
+        customerSelected = False
         reset_product_id()
     End Sub
 
     Private Sub reset_product_id()
         cmb_product_id.SelectedItem = Nothing
+        productSelected = False
+    End Sub
+
+    Private Sub clear_image()
+        If currentImage IsNot Nothing Then currentImage.Dispose()
+        currentImage = Nothing
+    End Sub
+
+    Private Sub dispose_pic_curr()
+        clear_image()
+        If pic_product.Image IsNot Nothing Then pic_product.Image.Dispose()
+        pic_product.Image = Nothing
+        pic_product.Refresh()
     End Sub
     Private Sub updown_quantity_ValueChanged(sender As Object, e As EventArgs) Handles updown_quantity.ValueChanged
+        calc_product_total()
+    End Sub
+
+    Private Sub calc_product_total()
         If txt_product_price.Text.Equals("") Then
             txt_product_total.Text = "0.00"
         Else
@@ -115,6 +181,10 @@
         End If
     End Sub
 
+    Private Sub reset_product_all()
+        reset_product_id()
+        reset_product_fields()
+    End Sub
     Private Function generate_order_id()
         If orderTable.Rows.Count > 0 Then
             Dim lastorderid As String = orderTable.Rows(0).Item("fld_order_id")
@@ -127,4 +197,41 @@
             Return neworderid
         End If
     End Function
+
+    Private Sub btn_add_cart_Click(sender As Object, e As EventArgs) Handles btn_add_cart.Click
+        'Make sure all info is selected before adding to cart
+        If staffSelected And productSelected And customerSelected Then
+            'add product to cart
+            grd_cart_view.Rows.Add(cmb_product_id.Text, txt_product_name.Text, updown_quantity.Value, totalprice)
+            reset_product_all()
+            isCartEmpty = False
+        Else
+            Beep()
+            MsgBox("Please fill out all information!!")
+        End If
+    End Sub
+
+    Private Sub clear_cart()
+        For Each row As DataGridViewRow In grd_cart_view.Rows
+            grd_cart_view.Rows.RemoveAt(grd_cart_view.Rows.Count - 1)
+        Next
+        ' for some reasons, the first row will not be deleted, so deleting it explicitly seems like a good idea
+        If grd_cart_view.Rows.Count > 0 Then
+            grd_cart_view.Rows.RemoveAt(0)
+        End If
+        isCartEmpty = True
+        txt_cart_total.Text = "0.00"
+    End Sub
+
+    Private Sub render_cart_total()
+        If grd_cart_view.Rows.Count > 0 Then
+            ' For 
+            cartTotal += Double.Parse(grd_cart_view.Rows(i).Item(3))
+            ' Next
+        End If
+    End Sub
+
+    Private Sub btn_clear_cart_Click(sender As Object, e As EventArgs) Handles btn_clear_cart.Click
+        clear_cart()
+    End Sub
 End Class

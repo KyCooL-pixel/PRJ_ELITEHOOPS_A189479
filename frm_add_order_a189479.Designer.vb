@@ -34,8 +34,12 @@ Partial Class frm_add_order_a189479
         Me.pnl_order = New System.Windows.Forms.Panel()
         Me.btn_clear_cart = New System.Windows.Forms.Button()
         Me.btn_checkout = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txt_cart_total = New System.Windows.Forms.TextBox()
         Me.grd_cart_view = New System.Windows.Forms.DataGridView()
+        Me.fld_product_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fld_product_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fld_product_quantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fld_product_total_price = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lbl_instruction_1 = New System.Windows.Forms.Label()
         Me.lbl_instruction_2 = New System.Windows.Forms.Label()
@@ -61,7 +65,7 @@ Partial Class frm_add_order_a189479
         Me.lbl_product_name = New System.Windows.Forms.Label()
         Me.lbl_product_id = New System.Windows.Forms.Label()
         Me.cmb_product_id = New System.Windows.Forms.ComboBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.pic_product = New System.Windows.Forms.PictureBox()
         Me.lbl_product = New System.Windows.Forms.Label()
         Me.lbl_instruction_3 = New System.Windows.Forms.Label()
         Me.lbl_instruction_4 = New System.Windows.Forms.Label()
@@ -73,7 +77,7 @@ Partial Class frm_add_order_a189479
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.updown_quantity, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pic_product, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_new_order
@@ -113,7 +117,7 @@ Partial Class frm_add_order_a189479
         Me.cmb_staff_id.Location = New System.Drawing.Point(98, 58)
         Me.cmb_staff_id.Name = "cmb_staff_id"
         Me.cmb_staff_id.Size = New System.Drawing.Size(132, 24)
-        Me.cmb_staff_id.TabIndex = 4
+        Me.cmb_staff_id.TabIndex = 1
         '
         'lbl_order_id_data
         '
@@ -151,6 +155,7 @@ Partial Class frm_add_order_a189479
         '
         'txt_staff_name
         '
+        Me.txt_staff_name.CausesValidation = False
         Me.txt_staff_name.Location = New System.Drawing.Point(98, 118)
         Me.txt_staff_name.Name = "txt_staff_name"
         Me.txt_staff_name.ReadOnly = True
@@ -172,7 +177,7 @@ Partial Class frm_add_order_a189479
         Me.pnl_order.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pnl_order.Controls.Add(Me.btn_clear_cart)
         Me.pnl_order.Controls.Add(Me.btn_checkout)
-        Me.pnl_order.Controls.Add(Me.TextBox2)
+        Me.pnl_order.Controls.Add(Me.txt_cart_total)
         Me.pnl_order.Controls.Add(Me.grd_cart_view)
         Me.pnl_order.Controls.Add(Me.Label3)
         Me.pnl_order.Controls.Add(Me.lbl_order_id)
@@ -200,22 +205,56 @@ Partial Class frm_add_order_a189479
         Me.btn_checkout.Text = "Confirm Order"
         Me.btn_checkout.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'txt_cart_total
         '
-        Me.TextBox2.Location = New System.Drawing.Point(265, 378)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(207, 22)
-        Me.TextBox2.TabIndex = 28
+        Me.txt_cart_total.Location = New System.Drawing.Point(265, 378)
+        Me.txt_cart_total.Name = "txt_cart_total"
+        Me.txt_cart_total.Size = New System.Drawing.Size(207, 22)
+        Me.txt_cart_total.TabIndex = 28
         '
         'grd_cart_view
         '
+        Me.grd_cart_view.AllowUserToAddRows = False
         Me.grd_cart_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grd_cart_view.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fld_product_id, Me.fld_product_name, Me.fld_product_quantity, Me.fld_product_total_price})
         Me.grd_cart_view.Location = New System.Drawing.Point(12, 37)
         Me.grd_cart_view.Name = "grd_cart_view"
         Me.grd_cart_view.RowHeadersWidth = 51
         Me.grd_cart_view.RowTemplate.Height = 24
         Me.grd_cart_view.Size = New System.Drawing.Size(460, 321)
         Me.grd_cart_view.TabIndex = 8
+        '
+        'fld_product_id
+        '
+        Me.fld_product_id.HeaderText = "Product ID"
+        Me.fld_product_id.MinimumWidth = 6
+        Me.fld_product_id.Name = "fld_product_id"
+        Me.fld_product_id.ReadOnly = True
+        Me.fld_product_id.Width = 125
+        '
+        'fld_product_name
+        '
+        Me.fld_product_name.HeaderText = "Product Name"
+        Me.fld_product_name.MinimumWidth = 6
+        Me.fld_product_name.Name = "fld_product_name"
+        Me.fld_product_name.ReadOnly = True
+        Me.fld_product_name.Width = 125
+        '
+        'fld_product_quantity
+        '
+        Me.fld_product_quantity.HeaderText = "Quantity"
+        Me.fld_product_quantity.MinimumWidth = 6
+        Me.fld_product_quantity.Name = "fld_product_quantity"
+        Me.fld_product_quantity.ReadOnly = True
+        Me.fld_product_quantity.Width = 125
+        '
+        'fld_product_total_price
+        '
+        Me.fld_product_total_price.HeaderText = "Total Price(RM)"
+        Me.fld_product_total_price.MinimumWidth = 6
+        Me.fld_product_total_price.Name = "fld_product_total_price"
+        Me.fld_product_total_price.ReadOnly = True
+        Me.fld_product_total_price.Width = 125
         '
         'Label3
         '
@@ -304,7 +343,7 @@ Partial Class frm_add_order_a189479
         Me.cmb_customer_id.Location = New System.Drawing.Point(98, 58)
         Me.cmb_customer_id.Name = "cmb_customer_id"
         Me.cmb_customer_id.Size = New System.Drawing.Size(132, 24)
-        Me.cmb_customer_id.TabIndex = 4
+        Me.cmb_customer_id.TabIndex = 2
         '
         'Panel2
         '
@@ -324,11 +363,11 @@ Partial Class frm_add_order_a189479
         Me.Panel2.Controls.Add(Me.lbl_product_name)
         Me.Panel2.Controls.Add(Me.lbl_product_id)
         Me.Panel2.Controls.Add(Me.cmb_product_id)
-        Me.Panel2.Controls.Add(Me.PictureBox1)
+        Me.Panel2.Controls.Add(Me.pic_product)
         Me.Panel2.Controls.Add(Me.lbl_product)
-        Me.Panel2.Location = New System.Drawing.Point(299, 80)
+        Me.Panel2.Location = New System.Drawing.Point(283, 80)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(461, 486)
+        Me.Panel2.Size = New System.Drawing.Size(483, 486)
         Me.Panel2.TabIndex = 11
         '
         'btn_add_cart
@@ -336,7 +375,7 @@ Partial Class frm_add_order_a189479
         Me.btn_add_cart.Location = New System.Drawing.Point(322, 438)
         Me.btn_add_cart.Name = "btn_add_cart"
         Me.btn_add_cart.Size = New System.Drawing.Size(122, 38)
-        Me.btn_add_cart.TabIndex = 26
+        Me.btn_add_cart.TabIndex = 5
         Me.btn_add_cart.Text = "Add to Cart"
         Me.btn_add_cart.UseVisualStyleBackColor = True
         '
@@ -374,7 +413,7 @@ Partial Class frm_add_order_a189479
         Me.txt_product_price.Location = New System.Drawing.Point(30, 291)
         Me.txt_product_price.Name = "txt_product_price"
         Me.txt_product_price.ReadOnly = True
-        Me.txt_product_price.Size = New System.Drawing.Size(179, 22)
+        Me.txt_product_price.Size = New System.Drawing.Size(163, 22)
         Me.txt_product_price.TabIndex = 22
         '
         'Label1
@@ -389,16 +428,18 @@ Partial Class frm_add_order_a189479
         'updown_quantity
         '
         Me.updown_quantity.Location = New System.Drawing.Point(30, 350)
+        Me.updown_quantity.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.updown_quantity.Name = "updown_quantity"
-        Me.updown_quantity.Size = New System.Drawing.Size(179, 22)
-        Me.updown_quantity.TabIndex = 8
+        Me.updown_quantity.Size = New System.Drawing.Size(163, 22)
+        Me.updown_quantity.TabIndex = 4
+        Me.updown_quantity.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'txt_product_type
         '
         Me.txt_product_type.Location = New System.Drawing.Point(30, 234)
         Me.txt_product_type.Name = "txt_product_type"
         Me.txt_product_type.ReadOnly = True
-        Me.txt_product_type.Size = New System.Drawing.Size(179, 22)
+        Me.txt_product_type.Size = New System.Drawing.Size(163, 22)
         Me.txt_product_type.TabIndex = 20
         '
         'lbl_product_type
@@ -415,7 +456,7 @@ Partial Class frm_add_order_a189479
         Me.txt_product_brand.Location = New System.Drawing.Point(30, 179)
         Me.txt_product_brand.Name = "txt_product_brand"
         Me.txt_product_brand.ReadOnly = True
-        Me.txt_product_brand.Size = New System.Drawing.Size(179, 22)
+        Me.txt_product_brand.Size = New System.Drawing.Size(163, 22)
         Me.txt_product_brand.TabIndex = 18
         '
         'lbl_brand
@@ -432,7 +473,7 @@ Partial Class frm_add_order_a189479
         Me.txt_product_name.Location = New System.Drawing.Point(30, 122)
         Me.txt_product_name.Name = "txt_product_name"
         Me.txt_product_name.ReadOnly = True
-        Me.txt_product_name.Size = New System.Drawing.Size(179, 22)
+        Me.txt_product_name.Size = New System.Drawing.Size(163, 22)
         Me.txt_product_name.TabIndex = 16
         '
         'lbl_product_name
@@ -457,19 +498,20 @@ Partial Class frm_add_order_a189479
         'cmb_product_id
         '
         Me.cmb_product_id.FormattingEnabled = True
-        Me.cmb_product_id.Location = New System.Drawing.Point(77, 56)
+        Me.cmb_product_id.Location = New System.Drawing.Point(64, 56)
         Me.cmb_product_id.Name = "cmb_product_id"
         Me.cmb_product_id.Size = New System.Drawing.Size(132, 24)
-        Me.cmb_product_id.TabIndex = 11
+        Me.cmb_product_id.TabIndex = 3
         '
-        'PictureBox1
+        'pic_product
         '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Location = New System.Drawing.Point(230, 101)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(214, 272)
-        Me.PictureBox1.TabIndex = 14
-        Me.PictureBox1.TabStop = False
+        Me.pic_product.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pic_product.Location = New System.Drawing.Point(211, 92)
+        Me.pic_product.Name = "pic_product"
+        Me.pic_product.Size = New System.Drawing.Size(256, 280)
+        Me.pic_product.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pic_product.TabIndex = 14
+        Me.pic_product.TabStop = False
         '
         'lbl_product
         '
@@ -485,7 +527,7 @@ Partial Class frm_add_order_a189479
         '
         Me.lbl_instruction_3.AutoSize = True
         Me.lbl_instruction_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_instruction_3.Location = New System.Drawing.Point(305, 57)
+        Me.lbl_instruction_3.Location = New System.Drawing.Point(279, 57)
         Me.lbl_instruction_3.Name = "lbl_instruction_3"
         Me.lbl_instruction_3.Size = New System.Drawing.Size(135, 20)
         Me.lbl_instruction_3.TabIndex = 14
@@ -547,7 +589,7 @@ Partial Class frm_add_order_a189479
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.updown_quantity, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pic_product, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -584,7 +626,7 @@ Partial Class frm_add_order_a189479
     Friend WithEvents lbl_product_name As Label
     Friend WithEvents lbl_product_id As Label
     Friend WithEvents cmb_product_id As ComboBox
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents pic_product As PictureBox
     Friend WithEvents btn_add_cart As Button
     Friend WithEvents txt_product_total As TextBox
     Friend WithEvents lbl_total As Label
@@ -593,9 +635,13 @@ Partial Class frm_add_order_a189479
     Friend WithEvents Label1 As Label
     Friend WithEvents btn_clear_cart As Button
     Friend WithEvents btn_checkout As Button
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txt_cart_total As TextBox
     Friend WithEvents grd_cart_view As DataGridView
     Friend WithEvents Label3 As Label
     Friend WithEvents btn_back As Button
     Friend WithEvents btn_restart As Button
+    Friend WithEvents fld_product_id As DataGridViewTextBoxColumn
+    Friend WithEvents fld_product_name As DataGridViewTextBoxColumn
+    Friend WithEvents fld_product_quantity As DataGridViewTextBoxColumn
+    Friend WithEvents fld_product_total_price As DataGridViewTextBoxColumn
 End Class
