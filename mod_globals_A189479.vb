@@ -26,4 +26,17 @@
             mywriter.Connection.Close()
         End Try
     End Sub
+
+    Public Sub run_transcation(thissql As String)
+        Dim mytranscation As OleDb.OleDbTransaction
+        Dim mywriter As New OleDb.OleDbCommand(thissql, connectionString2)
+        Try
+            '
+            'For 
+
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
 End Module

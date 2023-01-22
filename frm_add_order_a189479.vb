@@ -204,6 +204,7 @@
             'add product to cart
             grd_cart_view.Rows.Add(cmb_product_id.Text, txt_product_name.Text, updown_quantity.Value, totalprice)
             reset_product_all()
+            render_cart_total()
             isCartEmpty = False
         Else
             Beep()
@@ -225,13 +226,33 @@
 
     Private Sub render_cart_total()
         If grd_cart_view.Rows.Count > 0 Then
-            ' For 
-            cartTotal += Double.Parse(grd_cart_view.Rows(i).Item(3))
-            ' Next
+            cartTotal = 0.00
+            For i As Integer = 0 To grd_cart_view.Rows.Count - 1
+                cartTotal += Double.Parse(grd_cart_view.Rows(i).Cells(3).Value.ToString)
+            Next
+        Else
+            cartTotal = 0.00
         End If
+        txt_cart_total.Text = cartTotal
     End Sub
 
     Private Sub btn_clear_cart_Click(sender As Object, e As EventArgs) Handles btn_clear_cart.Click
         clear_cart()
+    End Sub
+
+    Private Sub btn_checkout_Click(sender As Object, e As EventArgs) Handles btn_checkout.Click
+        Dim order_confirmation = MsgBox($"Are you sure you want to order", MsgBoxStyle.YesNo)
+        If order_confirmation = MsgBoxResult.Yes Then
+            run_sql_command($"insert into tbl_order")
+            reset_ids()
+            reset_fields()
+            cmb_staff_id.Enabled = True
+            cmb_customer_id.Enabled = True
+            clear_cart()
+        End If
+        Beep()
+        MsgBox("Order is cleared")
+        init()
+
     End Sub
 End Class

@@ -207,10 +207,12 @@ Partial Class frm_add_order_a189479
         '
         'txt_cart_total
         '
+        Me.txt_cart_total.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_cart_total.Location = New System.Drawing.Point(265, 378)
         Me.txt_cart_total.Name = "txt_cart_total"
-        Me.txt_cart_total.Size = New System.Drawing.Size(207, 22)
+        Me.txt_cart_total.Size = New System.Drawing.Size(207, 27)
         Me.txt_cart_total.TabIndex = 28
+        Me.txt_cart_total.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'grd_cart_view
         '
