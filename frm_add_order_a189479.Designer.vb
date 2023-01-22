@@ -65,12 +65,12 @@ Partial Class frm_add_order_a189479
         Me.lbl_product_name = New System.Windows.Forms.Label()
         Me.lbl_product_id = New System.Windows.Forms.Label()
         Me.cmb_product_id = New System.Windows.Forms.ComboBox()
-        Me.pic_product = New System.Windows.Forms.PictureBox()
         Me.lbl_product = New System.Windows.Forms.Label()
         Me.lbl_instruction_3 = New System.Windows.Forms.Label()
         Me.lbl_instruction_4 = New System.Windows.Forms.Label()
         Me.btn_back = New System.Windows.Forms.Button()
         Me.btn_restart = New System.Windows.Forms.Button()
+        Me.pic_product = New System.Windows.Forms.PictureBox()
         Me.pnl_staff.SuspendLayout()
         Me.pnl_order.SuspendLayout()
         CType(Me.grd_cart_view, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -217,6 +217,7 @@ Partial Class frm_add_order_a189479
         'grd_cart_view
         '
         Me.grd_cart_view.AllowUserToAddRows = False
+        Me.grd_cart_view.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.grd_cart_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grd_cart_view.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fld_product_id, Me.fld_product_name, Me.fld_product_quantity, Me.fld_product_total_price})
         Me.grd_cart_view.Location = New System.Drawing.Point(12, 37)
@@ -233,7 +234,7 @@ Partial Class frm_add_order_a189479
         Me.fld_product_id.MinimumWidth = 6
         Me.fld_product_id.Name = "fld_product_id"
         Me.fld_product_id.ReadOnly = True
-        Me.fld_product_id.Width = 125
+        Me.fld_product_id.Width = 95
         '
         'fld_product_name
         '
@@ -241,7 +242,7 @@ Partial Class frm_add_order_a189479
         Me.fld_product_name.MinimumWidth = 6
         Me.fld_product_name.Name = "fld_product_name"
         Me.fld_product_name.ReadOnly = True
-        Me.fld_product_name.Width = 125
+        Me.fld_product_name.Width = 117
         '
         'fld_product_quantity
         '
@@ -249,7 +250,7 @@ Partial Class frm_add_order_a189479
         Me.fld_product_quantity.MinimumWidth = 6
         Me.fld_product_quantity.Name = "fld_product_quantity"
         Me.fld_product_quantity.ReadOnly = True
-        Me.fld_product_quantity.Width = 125
+        Me.fld_product_quantity.Width = 90
         '
         'fld_product_total_price
         '
@@ -506,16 +507,6 @@ Partial Class frm_add_order_a189479
         Me.cmb_product_id.Size = New System.Drawing.Size(132, 24)
         Me.cmb_product_id.TabIndex = 3
         '
-        'pic_product
-        '
-        Me.pic_product.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pic_product.Location = New System.Drawing.Point(211, 92)
-        Me.pic_product.Name = "pic_product"
-        Me.pic_product.Size = New System.Drawing.Size(256, 280)
-        Me.pic_product.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pic_product.TabIndex = 14
-        Me.pic_product.TabStop = False
-        '
         'lbl_product
         '
         Me.lbl_product.AutoSize = True
@@ -564,11 +555,21 @@ Partial Class frm_add_order_a189479
         Me.btn_restart.Text = "Remake Order"
         Me.btn_restart.UseVisualStyleBackColor = True
         '
+        'pic_product
+        '
+        Me.pic_product.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pic_product.Location = New System.Drawing.Point(211, 92)
+        Me.pic_product.Name = "pic_product"
+        Me.pic_product.Size = New System.Drawing.Size(256, 280)
+        Me.pic_product.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pic_product.TabIndex = 14
+        Me.pic_product.TabStop = False
+        '
         'frm_add_order_a189479
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1282, 589)
+        Me.ClientSize = New System.Drawing.Size(1287, 589)
         Me.Controls.Add(Me.btn_restart)
         Me.Controls.Add(Me.btn_back)
         Me.Controls.Add(Me.lbl_instruction_4)
