@@ -188,7 +188,7 @@
     Private Function generate_order_id()
         If orderTable.Rows.Count > 0 Then
             Dim lastorderid As String = orderTable.Rows(orderTable.Rows.Count - 1).Item("fld_order_id")
-            'MsgBox(lastmatric)l
+            'MsgBox(lastmatric)
             Dim neworderid As String = "K00" & Mid(lastorderid, 2) + 1
             Return neworderid
         Else

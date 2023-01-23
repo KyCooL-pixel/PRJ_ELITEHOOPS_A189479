@@ -36,7 +36,6 @@ C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\bin\Debug\PRJ_ELITEHOOPS_A189479.
 C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\bin\Debug\PRJ_ELITEHOOPS_A189479.exe
 C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\bin\Debug\PRJ_ELITEHOOPS_A189479.pdb
 C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\bin\Debug\PRJ_ELITEHOOPS_A189479.xml
-C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\obj\Debug\prj_elitehoops_a189479.vbproj.AssemblyReference.cache
 C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\obj\Debug\PRJ_ELITEHOOPS_A189479.frm_add_product_a189479.resources
 C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\obj\Debug\PRJ_ELITEHOOPS_A189479.frm_customers_a189479.resources
 C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\obj\Debug\PRJ_ELITEHOOPS_A189479.frm_mainmenu_a189479.resources
@@ -57,3 +56,4 @@ C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\obj\Debug\PRJ_ELITEHOOPS_A189479.
 C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\obj\Debug\PRJ_ELITEHOOPS_A189479.frm_add_order_a189479.resources
 C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\obj\Debug\PRJ_ELITEHOOPS_A189479.frm_view_order_a189479.resources
 C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\obj\Debug\PRJ_ELITEHOOPS_A189479.splash_elitehoops_a189479.resources
+C:\Users\user\Workspace\PRJ_ELITEHOOPS_A189479\obj\Debug\prj_elitehoops_a189479.vbproj.AssemblyReference.cache
