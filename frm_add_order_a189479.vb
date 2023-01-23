@@ -20,6 +20,10 @@
 
     Dim totalprice As New Double
     Dim cartTotal As New Double
+
+    'Declare an array to track product added into cart
+    Dim cartArray As New ArrayList()
+
     Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
         'maybe handle transcation end here also
         ' Rerolling transcation
@@ -63,6 +67,7 @@
             .DropDownStyle = ComboBoxStyle.DropDownList
             .SelectedItem = Nothing
         End With
+        cartArray.Clear()
 
         'makes the default value of comboboxes and the display fields null
         lbl_order_id_data.Text = generate_order_id()
@@ -71,6 +76,7 @@
         reset_fields()
         cmb_staff_id.Enabled = True
         cmb_customer_id.Enabled = True
+        cartArray.Clear()
 
     End Sub
 
@@ -109,14 +115,20 @@
     Private Sub cmb_product_id_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_product_id.SelectedIndexChanged
         reset_product_fields()
         If cmb_product_id.SelectedItem IsNot Nothing Then
-            txt_product_name.Text = productTable.Rows(cmb_product_id.SelectedIndex).Item(1).ToString
-            txt_product_price.Text = productTable.Rows(cmb_product_id.SelectedIndex).Item(2).ToString
-            txt_product_brand.Text = productTable.Rows(cmb_product_id.SelectedIndex).Item(3).ToString
-            txt_product_type.Text = productTable.Rows(cmb_product_id.SelectedIndex).Item(4).ToString
-            'Prevent user from changing the quantity without a product
-            updown_quantity.Enabled = True
-            calc_product_total()
-            productSelected = True
+            If Not cartArray.Contains(cmb_product_id.SelectedValue) Then
+                txt_product_name.Text = productTable.Rows(cmb_product_id.SelectedIndex).Item(1).ToString
+                txt_product_price.Text = productTable.Rows(cmb_product_id.SelectedIndex).Item(2).ToString
+                txt_product_brand.Text = productTable.Rows(cmb_product_id.SelectedIndex).Item(3).ToString
+                txt_product_type.Text = productTable.Rows(cmb_product_id.SelectedIndex).Item(4).ToString
+                'Prevent user from changing the quantity without a product
+                updown_quantity.Enabled = True
+                calc_product_total()
+                productSelected = True
+                'Add latest product id into arraylist
+            Else
+                MsgBox("This product had already been added !!")
+                reset_product_id()
+            End If
         End If
     End Sub
 
@@ -207,6 +219,9 @@
             render_cart_total()
             isCartEmpty = False
             productSelected = False
+            If grd_cart_view.Rows.Count > 0 Then
+                cartArray.Add(grd_cart_view.Rows(grd_cart_view.Rows.Count - 1).Cells(0).Value)
+            End If
         Else
             Beep()
             MsgBox("Please fill out all information!!")
@@ -223,6 +238,7 @@
         End If
         isCartEmpty = True
         txt_cart_total.Text = "0.00"
+        cartArray.Clear()
     End Sub
 
     Private Sub render_cart_total()
@@ -287,7 +303,9 @@
     Private Sub dgv_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles grd_cart_view.KeyDown
         If e.KeyValue = 46 Then
             Dim j As Integer
-            grd_cart_view.Rows.RemoveAt(grd_cart_view.SelectedCells(j).RowIndex)
+            Dim rowToBeRemoved As Integer = grd_cart_view.SelectedCells(j).RowIndex
+            cartArray.Remove(grd_cart_view.Rows(rowToBeRemoved).Cells(0).Value.ToString)
+            grd_cart_view.Rows.RemoveAt(rowToBeRemoved)
             Application.DoEvents()
             render_cart_total()
         End If
