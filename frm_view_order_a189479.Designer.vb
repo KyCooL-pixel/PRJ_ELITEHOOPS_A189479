@@ -22,6 +22,7 @@ Partial Class frm_view_order_a189479
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_view_order_a189479))
         Me.lbl_view_order = New System.Windows.Forms.Label()
         Me.lbl_order_id = New System.Windows.Forms.Label()
         Me.lbl_staff_id = New System.Windows.Forms.Label()
@@ -34,21 +35,22 @@ Partial Class frm_view_order_a189479
         Me.lbl_staff_name_data = New System.Windows.Forms.Label()
         Me.lbl_staff_name = New System.Windows.Forms.Label()
         Me.grd_order_view = New System.Windows.Forms.DataGridView()
+        Me.clm_product_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_quantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_product_price = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_total_price = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lbl_order_datetime = New System.Windows.Forms.Label()
         Me.lbl_order_datetime_data = New System.Windows.Forms.Label()
         Me.btn_back = New System.Windows.Forms.Button()
         Me.lbl_total_price_data = New System.Windows.Forms.Label()
         Me.lbl_total_price = New System.Windows.Forms.Label()
-        Me.clm_product_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_quantity = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_product_price = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_total_price = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.grd_order_view, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_view_order
         '
         Me.lbl_view_order.AutoSize = True
+        Me.lbl_view_order.BackColor = System.Drawing.Color.Transparent
         Me.lbl_view_order.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_view_order.Location = New System.Drawing.Point(12, 9)
         Me.lbl_view_order.Name = "lbl_view_order"
@@ -59,6 +61,7 @@ Partial Class frm_view_order_a189479
         'lbl_order_id
         '
         Me.lbl_order_id.AutoSize = True
+        Me.lbl_order_id.BackColor = System.Drawing.Color.Transparent
         Me.lbl_order_id.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_order_id.Location = New System.Drawing.Point(12, 63)
         Me.lbl_order_id.Name = "lbl_order_id"
@@ -69,6 +72,7 @@ Partial Class frm_view_order_a189479
         'lbl_staff_id
         '
         Me.lbl_staff_id.AutoSize = True
+        Me.lbl_staff_id.BackColor = System.Drawing.Color.Transparent
         Me.lbl_staff_id.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_staff_id.Location = New System.Drawing.Point(12, 91)
         Me.lbl_staff_id.Name = "lbl_staff_id"
@@ -79,6 +83,7 @@ Partial Class frm_view_order_a189479
         'lbl_staff_id_data
         '
         Me.lbl_staff_id_data.AutoSize = True
+        Me.lbl_staff_id_data.BackColor = System.Drawing.Color.Transparent
         Me.lbl_staff_id_data.Font = New System.Drawing.Font("Microsoft Tai Le", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_staff_id_data.Location = New System.Drawing.Point(144, 92)
         Me.lbl_staff_id_data.Name = "lbl_staff_id_data"
@@ -89,6 +94,7 @@ Partial Class frm_view_order_a189479
         'lbl_customer_id
         '
         Me.lbl_customer_id.AutoSize = True
+        Me.lbl_customer_id.BackColor = System.Drawing.Color.Transparent
         Me.lbl_customer_id.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_customer_id.Location = New System.Drawing.Point(12, 118)
         Me.lbl_customer_id.Name = "lbl_customer_id"
@@ -99,6 +105,7 @@ Partial Class frm_view_order_a189479
         'lbl_customer_id_data
         '
         Me.lbl_customer_id_data.AutoSize = True
+        Me.lbl_customer_id_data.BackColor = System.Drawing.Color.Transparent
         Me.lbl_customer_id_data.Font = New System.Drawing.Font("Microsoft Tai Le", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_customer_id_data.Location = New System.Drawing.Point(144, 120)
         Me.lbl_customer_id_data.Name = "lbl_customer_id_data"
@@ -117,6 +124,7 @@ Partial Class frm_view_order_a189479
         'lbl_customer_name_data
         '
         Me.lbl_customer_name_data.AutoSize = True
+        Me.lbl_customer_name_data.BackColor = System.Drawing.Color.Transparent
         Me.lbl_customer_name_data.Font = New System.Drawing.Font("Microsoft Tai Le", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_customer_name_data.Location = New System.Drawing.Point(411, 120)
         Me.lbl_customer_name_data.Name = "lbl_customer_name_data"
@@ -127,6 +135,7 @@ Partial Class frm_view_order_a189479
         'lbl_customer_name
         '
         Me.lbl_customer_name.AutoSize = True
+        Me.lbl_customer_name.BackColor = System.Drawing.Color.Transparent
         Me.lbl_customer_name.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_customer_name.Location = New System.Drawing.Point(248, 118)
         Me.lbl_customer_name.Name = "lbl_customer_name"
@@ -137,6 +146,7 @@ Partial Class frm_view_order_a189479
         'lbl_staff_name_data
         '
         Me.lbl_staff_name_data.AutoSize = True
+        Me.lbl_staff_name_data.BackColor = System.Drawing.Color.Transparent
         Me.lbl_staff_name_data.Font = New System.Drawing.Font("Microsoft Tai Le", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_staff_name_data.Location = New System.Drawing.Point(411, 91)
         Me.lbl_staff_name_data.Name = "lbl_staff_name_data"
@@ -147,6 +157,7 @@ Partial Class frm_view_order_a189479
         'lbl_staff_name
         '
         Me.lbl_staff_name.AutoSize = True
+        Me.lbl_staff_name.BackColor = System.Drawing.Color.Transparent
         Me.lbl_staff_name.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_staff_name.Location = New System.Drawing.Point(248, 90)
         Me.lbl_staff_name.Name = "lbl_staff_name"
@@ -167,56 +178,6 @@ Partial Class frm_view_order_a189479
         Me.grd_order_view.RowTemplate.Height = 24
         Me.grd_order_view.Size = New System.Drawing.Size(830, 361)
         Me.grd_order_view.TabIndex = 11
-        '
-        'lbl_order_datetime
-        '
-        Me.lbl_order_datetime.AutoSize = True
-        Me.lbl_order_datetime.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_order_datetime.Location = New System.Drawing.Point(546, 61)
-        Me.lbl_order_datetime.Name = "lbl_order_datetime"
-        Me.lbl_order_datetime.Size = New System.Drawing.Size(110, 24)
-        Me.lbl_order_datetime.TabIndex = 12
-        Me.lbl_order_datetime.Text = "Ordered at: "
-        '
-        'lbl_order_datetime_data
-        '
-        Me.lbl_order_datetime_data.AutoSize = True
-        Me.lbl_order_datetime_data.Font = New System.Drawing.Font("Microsoft Tai Le", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_order_datetime_data.Location = New System.Drawing.Point(652, 63)
-        Me.lbl_order_datetime_data.Name = "lbl_order_datetime_data"
-        Me.lbl_order_datetime_data.Size = New System.Drawing.Size(31, 22)
-        Me.lbl_order_datetime_data.TabIndex = 13
-        Me.lbl_order_datetime_data.Text = "---"
-        '
-        'btn_back
-        '
-        Me.btn_back.Location = New System.Drawing.Point(727, 574)
-        Me.btn_back.Name = "btn_back"
-        Me.btn_back.Size = New System.Drawing.Size(115, 36)
-        Me.btn_back.TabIndex = 14
-        Me.btn_back.Text = "Back"
-        Me.btn_back.UseVisualStyleBackColor = True
-        '
-        'lbl_total_price_data
-        '
-        Me.lbl_total_price_data.AutoSize = True
-        Me.lbl_total_price_data.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_total_price_data.Location = New System.Drawing.Point(745, 509)
-        Me.lbl_total_price_data.Name = "lbl_total_price_data"
-        Me.lbl_total_price_data.Size = New System.Drawing.Size(64, 24)
-        Me.lbl_total_price_data.TabIndex = 16
-        Me.lbl_total_price_data.Text = "---------"
-        Me.lbl_total_price_data.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'lbl_total_price
-        '
-        Me.lbl_total_price.AutoSize = True
-        Me.lbl_total_price.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_total_price.Location = New System.Drawing.Point(546, 509)
-        Me.lbl_total_price.Name = "lbl_total_price"
-        Me.lbl_total_price.Size = New System.Drawing.Size(155, 24)
-        Me.lbl_total_price.TabIndex = 15
-        Me.lbl_total_price.Text = "Total Price (RM): "
         '
         'clm_product_id
         '
@@ -245,10 +206,66 @@ Partial Class frm_view_order_a189479
         Me.clm_total_price.MinimumWidth = 6
         Me.clm_total_price.Name = "clm_total_price"
         '
+        'lbl_order_datetime
+        '
+        Me.lbl_order_datetime.AutoSize = True
+        Me.lbl_order_datetime.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_order_datetime.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_order_datetime.Location = New System.Drawing.Point(546, 61)
+        Me.lbl_order_datetime.Name = "lbl_order_datetime"
+        Me.lbl_order_datetime.Size = New System.Drawing.Size(110, 24)
+        Me.lbl_order_datetime.TabIndex = 12
+        Me.lbl_order_datetime.Text = "Ordered at: "
+        '
+        'lbl_order_datetime_data
+        '
+        Me.lbl_order_datetime_data.AutoSize = True
+        Me.lbl_order_datetime_data.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_order_datetime_data.Font = New System.Drawing.Font("Microsoft Tai Le", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_order_datetime_data.Location = New System.Drawing.Point(652, 63)
+        Me.lbl_order_datetime_data.Name = "lbl_order_datetime_data"
+        Me.lbl_order_datetime_data.Size = New System.Drawing.Size(31, 22)
+        Me.lbl_order_datetime_data.TabIndex = 13
+        Me.lbl_order_datetime_data.Text = "---"
+        '
+        'btn_back
+        '
+        Me.btn_back.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.btn_back.Location = New System.Drawing.Point(727, 574)
+        Me.btn_back.Name = "btn_back"
+        Me.btn_back.Size = New System.Drawing.Size(115, 36)
+        Me.btn_back.TabIndex = 14
+        Me.btn_back.Text = "Back"
+        Me.btn_back.UseVisualStyleBackColor = False
+        '
+        'lbl_total_price_data
+        '
+        Me.lbl_total_price_data.AutoSize = True
+        Me.lbl_total_price_data.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_total_price_data.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_total_price_data.Location = New System.Drawing.Point(745, 509)
+        Me.lbl_total_price_data.Name = "lbl_total_price_data"
+        Me.lbl_total_price_data.Size = New System.Drawing.Size(64, 24)
+        Me.lbl_total_price_data.TabIndex = 16
+        Me.lbl_total_price_data.Text = "---------"
+        Me.lbl_total_price_data.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'lbl_total_price
+        '
+        Me.lbl_total_price.AutoSize = True
+        Me.lbl_total_price.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_total_price.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_total_price.Location = New System.Drawing.Point(546, 509)
+        Me.lbl_total_price.Name = "lbl_total_price"
+        Me.lbl_total_price.Size = New System.Drawing.Size(155, 24)
+        Me.lbl_total_price.TabIndex = 15
+        Me.lbl_total_price.Text = "Total Price (RM): "
+        '
         'frm_view_order_a189479
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(861, 622)
         Me.Controls.Add(Me.lbl_total_price_data)
         Me.Controls.Add(Me.lbl_total_price)
@@ -268,7 +285,7 @@ Partial Class frm_view_order_a189479
         Me.Controls.Add(Me.lbl_order_id)
         Me.Controls.Add(Me.lbl_view_order)
         Me.Name = "frm_view_order_a189479"
-        Me.Text = "frm_view_order_a189479"
+        Me.Text = "View Order"
         CType(Me.grd_order_view, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

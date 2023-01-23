@@ -197,7 +197,7 @@ Partial Class frm_insert_customer_a189479
         Me.Controls.Add(Me.lbl_add_customer)
         Me.Controls.Add(Me.grd_staff_view)
         Me.Name = "frm_insert_customer_a189479"
-        Me.Text = "frm_insert_customer_a189479"
+        Me.Text = "Add Customer"
         CType(Me.grd_staff_view, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

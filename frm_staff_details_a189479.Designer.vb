@@ -22,6 +22,7 @@ Partial Class frm_staff_details_a189479
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_staff_details_a189479))
         Me.lbl_staff_details = New System.Windows.Forms.Label()
         Me.lbl_staff_id = New System.Windows.Forms.Label()
         Me.lbl_staff_name = New System.Windows.Forms.Label()
@@ -41,37 +42,47 @@ Partial Class frm_staff_details_a189479
         'lbl_staff_details
         '
         Me.lbl_staff_details.AutoSize = True
-        Me.lbl_staff_details.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_staff_details.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_staff_details.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_staff_details.Location = New System.Drawing.Point(25, 22)
         Me.lbl_staff_details.Name = "lbl_staff_details"
-        Me.lbl_staff_details.Size = New System.Drawing.Size(129, 25)
+        Me.lbl_staff_details.Size = New System.Drawing.Size(153, 29)
         Me.lbl_staff_details.TabIndex = 0
         Me.lbl_staff_details.Text = "Staff Details"
         '
         'lbl_staff_id
         '
         Me.lbl_staff_id.AutoSize = True
+        Me.lbl_staff_id.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_staff_id.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_staff_id.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.lbl_staff_id.Location = New System.Drawing.Point(27, 66)
         Me.lbl_staff_id.Name = "lbl_staff_id"
-        Me.lbl_staff_id.Size = New System.Drawing.Size(21, 17)
+        Me.lbl_staff_id.Size = New System.Drawing.Size(26, 20)
         Me.lbl_staff_id.TabIndex = 1
         Me.lbl_staff_id.Text = "ID"
         '
         'lbl_staff_name
         '
         Me.lbl_staff_name.AutoSize = True
-        Me.lbl_staff_name.Location = New System.Drawing.Point(27, 128)
+        Me.lbl_staff_name.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_staff_name.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_staff_name.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lbl_staff_name.Location = New System.Drawing.Point(27, 129)
         Me.lbl_staff_name.Name = "lbl_staff_name"
-        Me.lbl_staff_name.Size = New System.Drawing.Size(45, 17)
+        Me.lbl_staff_name.Size = New System.Drawing.Size(53, 20)
         Me.lbl_staff_name.TabIndex = 1
         Me.lbl_staff_name.Text = "Name"
         '
         'lbl_staff_role
         '
         Me.lbl_staff_role.AutoSize = True
-        Me.lbl_staff_role.Location = New System.Drawing.Point(27, 186)
+        Me.lbl_staff_role.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_staff_role.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_staff_role.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lbl_staff_role.Location = New System.Drawing.Point(27, 192)
         Me.lbl_staff_role.Name = "lbl_staff_role"
-        Me.lbl_staff_role.Size = New System.Drawing.Size(37, 17)
+        Me.lbl_staff_role.Size = New System.Drawing.Size(43, 20)
         Me.lbl_staff_role.TabIndex = 1
         Me.lbl_staff_role.Text = "Role"
         '
@@ -80,15 +91,15 @@ Partial Class frm_staff_details_a189479
         Me.txt_staff_id.Location = New System.Drawing.Point(30, 92)
         Me.txt_staff_id.Name = "txt_staff_id"
         Me.txt_staff_id.ReadOnly = True
-        Me.txt_staff_id.Size = New System.Drawing.Size(246, 22)
+        Me.txt_staff_id.Size = New System.Drawing.Size(276, 22)
         Me.txt_staff_id.TabIndex = 2
         '
         'txt_staff_name
         '
-        Me.txt_staff_name.Location = New System.Drawing.Point(30, 148)
+        Me.txt_staff_name.Location = New System.Drawing.Point(30, 152)
         Me.txt_staff_name.Name = "txt_staff_name"
         Me.txt_staff_name.ReadOnly = True
-        Me.txt_staff_name.Size = New System.Drawing.Size(246, 22)
+        Me.txt_staff_name.Size = New System.Drawing.Size(276, 22)
         Me.txt_staff_name.TabIndex = 2
         '
         'cmb_staff_role
@@ -99,14 +110,15 @@ Partial Class frm_staff_details_a189479
         Me.cmb_staff_role.Items.AddRange(New Object() {"Manager", "Sales", "Technical"})
         Me.cmb_staff_role.Location = New System.Drawing.Point(30, 220)
         Me.cmb_staff_role.Name = "cmb_staff_role"
-        Me.cmb_staff_role.Size = New System.Drawing.Size(246, 24)
+        Me.cmb_staff_role.Size = New System.Drawing.Size(276, 24)
         Me.cmb_staff_role.TabIndex = 3
         '
         'btn_update_staff
         '
-        Me.btn_update_staff.Location = New System.Drawing.Point(124, 361)
+        Me.btn_update_staff.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.btn_update_staff.Location = New System.Drawing.Point(226, 361)
         Me.btn_update_staff.Name = "btn_update_staff"
-        Me.btn_update_staff.Size = New System.Drawing.Size(72, 23)
+        Me.btn_update_staff.Size = New System.Drawing.Size(80, 30)
         Me.btn_update_staff.TabIndex = 4
         Me.btn_update_staff.Text = "Update"
         Me.btn_update_staff.UseVisualStyleBackColor = True
@@ -114,9 +126,9 @@ Partial Class frm_staff_details_a189479
         'btn_save_staff
         '
         Me.btn_save_staff.Enabled = False
-        Me.btn_save_staff.Location = New System.Drawing.Point(202, 361)
+        Me.btn_save_staff.Location = New System.Drawing.Point(140, 361)
         Me.btn_save_staff.Name = "btn_save_staff"
-        Me.btn_save_staff.Size = New System.Drawing.Size(74, 23)
+        Me.btn_save_staff.Size = New System.Drawing.Size(80, 30)
         Me.btn_save_staff.TabIndex = 4
         Me.btn_save_staff.Text = "Save"
         Me.btn_save_staff.UseVisualStyleBackColor = True
@@ -134,16 +146,17 @@ Partial Class frm_staff_details_a189479
         '
         Me.btn_add_staff.Location = New System.Drawing.Point(332, 361)
         Me.btn_add_staff.Name = "btn_add_staff"
-        Me.btn_add_staff.Size = New System.Drawing.Size(117, 23)
+        Me.btn_add_staff.Size = New System.Drawing.Size(105, 30)
         Me.btn_add_staff.TabIndex = 6
         Me.btn_add_staff.Text = "New"
         Me.btn_add_staff.UseVisualStyleBackColor = True
         '
         'btn_delete_staff
         '
+        Me.btn_delete_staff.ForeColor = System.Drawing.Color.Crimson
         Me.btn_delete_staff.Location = New System.Drawing.Point(455, 361)
         Me.btn_delete_staff.Name = "btn_delete_staff"
-        Me.btn_delete_staff.Size = New System.Drawing.Size(101, 23)
+        Me.btn_delete_staff.Size = New System.Drawing.Size(101, 30)
         Me.btn_delete_staff.TabIndex = 6
         Me.btn_delete_staff.Text = "Delete"
         Me.btn_delete_staff.UseVisualStyleBackColor = True
@@ -159,18 +172,20 @@ Partial Class frm_staff_details_a189479
         '
         'btn_back
         '
+        Me.btn_back.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.btn_back.Location = New System.Drawing.Point(30, 361)
         Me.btn_back.Name = "btn_back"
-        Me.btn_back.Size = New System.Drawing.Size(56, 23)
+        Me.btn_back.Size = New System.Drawing.Size(80, 30)
         Me.btn_back.TabIndex = 8
         Me.btn_back.Text = "Back"
-        Me.btn_back.UseVisualStyleBackColor = True
+        Me.btn_back.UseVisualStyleBackColor = False
         '
         'frm_staff_details_a189479
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(578, 396)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.ClientSize = New System.Drawing.Size(578, 408)
         Me.Controls.Add(Me.btn_back)
         Me.Controls.Add(Me.btn_view_staff_table)
         Me.Controls.Add(Me.btn_delete_staff)

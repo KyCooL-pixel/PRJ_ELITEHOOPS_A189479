@@ -22,6 +22,7 @@ Partial Class frm_add_order_a189479
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_add_order_a189479))
         Me.lbl_new_order = New System.Windows.Forms.Label()
         Me.lbl_order_id = New System.Windows.Forms.Label()
         Me.lbl_staff = New System.Windows.Forms.Label()
@@ -65,12 +66,12 @@ Partial Class frm_add_order_a189479
         Me.lbl_product_name = New System.Windows.Forms.Label()
         Me.lbl_product_id = New System.Windows.Forms.Label()
         Me.cmb_product_id = New System.Windows.Forms.ComboBox()
+        Me.pic_product = New System.Windows.Forms.PictureBox()
         Me.lbl_product = New System.Windows.Forms.Label()
         Me.lbl_instruction_3 = New System.Windows.Forms.Label()
         Me.lbl_instruction_4 = New System.Windows.Forms.Label()
         Me.btn_back = New System.Windows.Forms.Button()
         Me.btn_restart = New System.Windows.Forms.Button()
-        Me.pic_product = New System.Windows.Forms.PictureBox()
         Me.pnl_staff.SuspendLayout()
         Me.pnl_order.SuspendLayout()
         CType(Me.grd_cart_view, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,10 +84,11 @@ Partial Class frm_add_order_a189479
         'lbl_new_order
         '
         Me.lbl_new_order.AutoSize = True
-        Me.lbl_new_order.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_new_order.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_new_order.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_new_order.Location = New System.Drawing.Point(12, 9)
         Me.lbl_new_order.Name = "lbl_new_order"
-        Me.lbl_new_order.Size = New System.Drawing.Size(95, 36)
+        Me.lbl_new_order.Size = New System.Drawing.Size(108, 39)
         Me.lbl_new_order.TabIndex = 0
         Me.lbl_new_order.Text = "Order"
         '
@@ -148,7 +150,7 @@ Partial Class frm_add_order_a189479
         Me.pnl_staff.Controls.Add(Me.lbl_staff)
         Me.pnl_staff.Controls.Add(Me.lbl_staff_id)
         Me.pnl_staff.Controls.Add(Me.cmb_staff_id)
-        Me.pnl_staff.Location = New System.Drawing.Point(16, 80)
+        Me.pnl_staff.Location = New System.Drawing.Point(15, 94)
         Me.pnl_staff.Name = "pnl_staff"
         Me.pnl_staff.Size = New System.Drawing.Size(239, 162)
         Me.pnl_staff.TabIndex = 9
@@ -182,13 +184,15 @@ Partial Class frm_add_order_a189479
         Me.pnl_order.Controls.Add(Me.Label3)
         Me.pnl_order.Controls.Add(Me.lbl_order_id)
         Me.pnl_order.Controls.Add(Me.lbl_order_id_data)
-        Me.pnl_order.Location = New System.Drawing.Point(786, 80)
+        Me.pnl_order.Location = New System.Drawing.Point(782, 90)
         Me.pnl_order.Name = "pnl_order"
         Me.pnl_order.Size = New System.Drawing.Size(484, 486)
         Me.pnl_order.TabIndex = 10
         '
         'btn_clear_cart
         '
+        Me.btn_clear_cart.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_clear_cart.ForeColor = System.Drawing.Color.Crimson
         Me.btn_clear_cart.Location = New System.Drawing.Point(208, 438)
         Me.btn_clear_cart.Name = "btn_clear_cart"
         Me.btn_clear_cart.Size = New System.Drawing.Size(124, 37)
@@ -198,6 +202,8 @@ Partial Class frm_add_order_a189479
         '
         'btn_checkout
         '
+        Me.btn_checkout.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_checkout.ForeColor = System.Drawing.SystemColors.Highlight
         Me.btn_checkout.Location = New System.Drawing.Point(348, 438)
         Me.btn_checkout.Name = "btn_checkout"
         Me.btn_checkout.Size = New System.Drawing.Size(124, 37)
@@ -273,20 +279,24 @@ Partial Class frm_add_order_a189479
         'lbl_instruction_1
         '
         Me.lbl_instruction_1.AutoSize = True
-        Me.lbl_instruction_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_instruction_1.Location = New System.Drawing.Point(12, 57)
+        Me.lbl_instruction_1.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_instruction_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_instruction_1.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.lbl_instruction_1.Location = New System.Drawing.Point(11, 69)
         Me.lbl_instruction_1.Name = "lbl_instruction_1"
-        Me.lbl_instruction_1.Size = New System.Drawing.Size(114, 20)
+        Me.lbl_instruction_1.Size = New System.Drawing.Size(136, 24)
         Me.lbl_instruction_1.TabIndex = 11
         Me.lbl_instruction_1.Text = "1. Select Staff"
         '
         'lbl_instruction_2
         '
         Me.lbl_instruction_2.AutoSize = True
-        Me.lbl_instruction_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_instruction_2.Location = New System.Drawing.Point(14, 303)
+        Me.lbl_instruction_2.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_instruction_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_instruction_2.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.lbl_instruction_2.Location = New System.Drawing.Point(14, 301)
         Me.lbl_instruction_2.Name = "lbl_instruction_2"
-        Me.lbl_instruction_2.Size = New System.Drawing.Size(152, 20)
+        Me.lbl_instruction_2.Size = New System.Drawing.Size(186, 24)
         Me.lbl_instruction_2.TabIndex = 13
         Me.lbl_instruction_2.Text = "2. Select Customer"
         '
@@ -369,13 +379,15 @@ Partial Class frm_add_order_a189479
         Me.Panel2.Controls.Add(Me.cmb_product_id)
         Me.Panel2.Controls.Add(Me.pic_product)
         Me.Panel2.Controls.Add(Me.lbl_product)
-        Me.Panel2.Location = New System.Drawing.Point(283, 80)
+        Me.Panel2.Location = New System.Drawing.Point(283, 91)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(483, 486)
         Me.Panel2.TabIndex = 11
         '
         'btn_add_cart
         '
+        Me.btn_add_cart.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_add_cart.ForeColor = System.Drawing.SystemColors.Highlight
         Me.btn_add_cart.Location = New System.Drawing.Point(322, 438)
         Me.btn_add_cart.Name = "btn_add_cart"
         Me.btn_add_cart.Size = New System.Drawing.Size(122, 38)
@@ -507,6 +519,16 @@ Partial Class frm_add_order_a189479
         Me.cmb_product_id.Size = New System.Drawing.Size(132, 24)
         Me.cmb_product_id.TabIndex = 3
         '
+        'pic_product
+        '
+        Me.pic_product.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pic_product.Location = New System.Drawing.Point(211, 92)
+        Me.pic_product.Name = "pic_product"
+        Me.pic_product.Size = New System.Drawing.Size(256, 280)
+        Me.pic_product.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pic_product.TabIndex = 14
+        Me.pic_product.TabStop = False
+        '
         'lbl_product
         '
         Me.lbl_product.AutoSize = True
@@ -520,55 +542,53 @@ Partial Class frm_add_order_a189479
         'lbl_instruction_3
         '
         Me.lbl_instruction_3.AutoSize = True
-        Me.lbl_instruction_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_instruction_3.Location = New System.Drawing.Point(279, 57)
+        Me.lbl_instruction_3.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_instruction_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_instruction_3.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.lbl_instruction_3.Location = New System.Drawing.Point(279, 66)
         Me.lbl_instruction_3.Name = "lbl_instruction_3"
-        Me.lbl_instruction_3.Size = New System.Drawing.Size(135, 20)
+        Me.lbl_instruction_3.Size = New System.Drawing.Size(168, 24)
         Me.lbl_instruction_3.TabIndex = 14
         Me.lbl_instruction_3.Text = "3. Select product"
         '
         'lbl_instruction_4
         '
         Me.lbl_instruction_4.AutoSize = True
-        Me.lbl_instruction_4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_instruction_4.Location = New System.Drawing.Point(795, 57)
+        Me.lbl_instruction_4.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_instruction_4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_instruction_4.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.lbl_instruction_4.Location = New System.Drawing.Point(791, 65)
         Me.lbl_instruction_4.Name = "lbl_instruction_4"
-        Me.lbl_instruction_4.Size = New System.Drawing.Size(196, 20)
+        Me.lbl_instruction_4.Size = New System.Drawing.Size(241, 24)
         Me.lbl_instruction_4.TabIndex = 15
         Me.lbl_instruction_4.Text = "4. View and Confirm Cart"
         '
         'btn_back
         '
-        Me.btn_back.Location = New System.Drawing.Point(18, 528)
+        Me.btn_back.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.btn_back.Location = New System.Drawing.Point(18, 540)
         Me.btn_back.Name = "btn_back"
         Me.btn_back.Size = New System.Drawing.Size(89, 38)
         Me.btn_back.TabIndex = 16
         Me.btn_back.Text = "Back"
-        Me.btn_back.UseVisualStyleBackColor = True
+        Me.btn_back.UseVisualStyleBackColor = False
         '
         'btn_restart
         '
-        Me.btn_restart.Location = New System.Drawing.Point(128, 528)
+        Me.btn_restart.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_restart.ForeColor = System.Drawing.Color.Crimson
+        Me.btn_restart.Location = New System.Drawing.Point(128, 540)
         Me.btn_restart.Name = "btn_restart"
         Me.btn_restart.Size = New System.Drawing.Size(129, 38)
         Me.btn_restart.TabIndex = 17
         Me.btn_restart.Text = "Remake Order"
         Me.btn_restart.UseVisualStyleBackColor = True
         '
-        'pic_product
-        '
-        Me.pic_product.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pic_product.Location = New System.Drawing.Point(211, 92)
-        Me.pic_product.Name = "pic_product"
-        Me.pic_product.Size = New System.Drawing.Size(256, 280)
-        Me.pic_product.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pic_product.TabIndex = 14
-        Me.pic_product.TabStop = False
-        '
         'frm_add_order_a189479
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1287, 589)
         Me.Controls.Add(Me.btn_restart)
         Me.Controls.Add(Me.btn_back)
@@ -582,7 +602,7 @@ Partial Class frm_add_order_a189479
         Me.Controls.Add(Me.pnl_staff)
         Me.Controls.Add(Me.lbl_new_order)
         Me.Name = "frm_add_order_a189479"
-        Me.Text = "frm_add_order_a189479"
+        Me.Text = "Add Order"
         Me.pnl_staff.ResumeLayout(False)
         Me.pnl_staff.PerformLayout()
         Me.pnl_order.ResumeLayout(False)

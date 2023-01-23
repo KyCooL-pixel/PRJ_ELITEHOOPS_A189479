@@ -189,11 +189,11 @@
         If orderTable.Rows.Count > 0 Then
             Dim lastorderid As String = orderTable.Rows(orderTable.Rows.Count - 1).Item("fld_order_id")
             'MsgBox(lastmatric)l
-            Dim neworderid As String = "K0" & Mid(lastorderid, 2) + 1
+            Dim neworderid As String = "K00" & Mid(lastorderid, 2) + 1
             Return neworderid
         Else
             Dim neworderid As String
-            neworderid = "K00"
+            neworderid = "K000"
             Return neworderid
         End If
     End Function
@@ -206,6 +206,7 @@
             reset_product_all()
             render_cart_total()
             isCartEmpty = False
+            productSelected = False
         Else
             Beep()
             MsgBox("Please fill out all information!!")
@@ -241,39 +242,45 @@
     End Sub
 
     Private Sub btn_checkout_Click(sender As Object, e As EventArgs) Handles btn_checkout.Click
-        Dim order_confirmation = MsgBox($"Are you sure you want to order ?", MsgBoxStyle.YesNo)
-        'If confirm order
-        If order_confirmation = MsgBoxResult.Yes Then
-            Try
-                Dim datetime As String
-                Dim mytransaction As OleDb.OleDbTransaction
-                connectionString2.Open()
-                mytransaction = connectionString2.BeginTransaction
-                datetime = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
-                'insert into order table first
-                Dim ordersql As String = $"insert into tbl_order_a189479 values('{lbl_order_id_data.Text}','{cmb_staff_id.Text}','{cmb_customer_id.Text}','{datetime}')"
-                Dim orderwriter As New OleDb.OleDbCommand(ordersql, connectionString2, mytransaction)
-                orderwriter.ExecuteNonQuery()
-                'insert into orderlist row by row
-                For i As Integer = 0 To grd_cart_view.Rows.Count - 1
-                    Dim mysql As String = $"insert into tbl_orderlist_a189479 values('{lbl_order_id_data.Text}','{grd_cart_view.Rows(i).Cells(0).Value}',{grd_cart_view.Rows(i).Cells(2).Value})"
-                    Dim mywriter As New OleDb.OleDbCommand(mysql, connectionString2, mytransaction)
-                    mywriter.ExecuteNonQuery()
-                Next
-                mytransaction.Commit()
-                connectionString2.Close()
-                ' reset all the fields, ready for next order
-                MsgBox("Order Successed!!")
-                cmb_staff_id.Enabled = True
-                cmb_customer_id.Enabled = True
-                clear_cart()
-                init()
-            Catch ex As Exception
-                connectionString2.Close()
-                Beep()
-                MsgBox($"{ex}")
-            End Try
+        If grd_cart_view.Rows.Count > 0 Then
+            Dim order_confirmation = MsgBox($"Are you sure you want to order ?", MsgBoxStyle.YesNo)
+            'If confirm order
+            If order_confirmation = MsgBoxResult.Yes Then
+                Try
+                    Dim datetime As String
+                    Dim mytransaction As OleDb.OleDbTransaction
+                    connectionString2.Open()
+                    mytransaction = connectionString2.BeginTransaction
+                    datetime = System.DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+                    'insert into order table first
+                    Dim ordersql As String = $"insert into tbl_order_a189479 values('{lbl_order_id_data.Text}','{cmb_staff_id.Text}','{cmb_customer_id.Text}','{datetime}')"
+                    Dim orderwriter As New OleDb.OleDbCommand(ordersql, connectionString2, mytransaction)
+                    orderwriter.ExecuteNonQuery()
+                    'insert into orderlist row by row
+                    For i As Integer = 0 To grd_cart_view.Rows.Count - 1
+                        Dim mysql As String = $"insert into tbl_orderlist_a189479 values('{lbl_order_id_data.Text}','{grd_cart_view.Rows(i).Cells(0).Value}',{grd_cart_view.Rows(i).Cells(2).Value})"
+                        Dim mywriter As New OleDb.OleDbCommand(mysql, connectionString2, mytransaction)
+                        mywriter.ExecuteNonQuery()
+                    Next
+                    mytransaction.Commit()
+                    connectionString2.Close()
+                    ' reset all the fields, ready for next order
+                    MsgBox("Order Successed!!")
+                    cmb_staff_id.Enabled = True
+                    cmb_customer_id.Enabled = True
+                    clear_cart()
+                    init()
+                Catch ex As Exception
+                    connectionString2.Close()
+                    Beep()
+                    MsgBox($"{ex}")
+                End Try
+            End If
+        Else
+            Beep()
+            MsgBox（"Please add a product first !!! ")
         End If
+
     End Sub
 
     'catch user deleting rows and rerender the cart total price

@@ -40,11 +40,11 @@ Partial Class frm_add_product_a189479
         Me.grd_product_view = New System.Windows.Forms.DataGridView()
         Me.btn_add_product = New System.Windows.Forms.Button()
         Me.btn_clear_fields = New System.Windows.Forms.Button()
-        Me.pic_product = New System.Windows.Forms.PictureBox()
         Me.btn_select_picture = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.btn_back_to_details = New System.Windows.Forms.Button()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
+        Me.pic_product = New System.Windows.Forms.PictureBox()
         CType(Me.grd_product_view, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pic_product, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -202,16 +202,6 @@ Partial Class frm_add_product_a189479
         Me.btn_clear_fields.Text = "Clear"
         Me.btn_clear_fields.UseVisualStyleBackColor = True
         '
-        'pic_product
-        '
-        Me.pic_product.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pic_product.Location = New System.Drawing.Point(474, 69)
-        Me.pic_product.Name = "pic_product"
-        Me.pic_product.Size = New System.Drawing.Size(215, 236)
-        Me.pic_product.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pic_product.TabIndex = 14
-        Me.pic_product.TabStop = False
-        '
         'btn_select_picture
         '
         Me.btn_select_picture.Location = New System.Drawing.Point(474, 316)
@@ -237,6 +227,16 @@ Partial Class frm_add_product_a189479
         'OpenFileDialog2
         '
         Me.OpenFileDialog2.FileName = "OpenFileDialog2"
+        '
+        'pic_product
+        '
+        Me.pic_product.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.pic_product.Location = New System.Drawing.Point(474, 69)
+        Me.pic_product.Name = "pic_product"
+        Me.pic_product.Size = New System.Drawing.Size(215, 236)
+        Me.pic_product.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pic_product.TabIndex = 14
+        Me.pic_product.TabStop = False
         '
         'frm_add_product_a189479
         '
@@ -265,7 +265,7 @@ Partial Class frm_add_product_a189479
         Me.Controls.Add(Me.lbl_add_product)
         Me.Controls.Add(Me.grd_product_view)
         Me.Name = "frm_add_product_a189479"
-        Me.Text = "frm_add_product_a189479"
+        Me.Text = "Add Product"
         CType(Me.grd_product_view, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pic_product, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
