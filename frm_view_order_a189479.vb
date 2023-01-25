@@ -99,13 +99,7 @@
     End Sub
 
     Private Sub clear_grd_order()
-        For Each row As DataGridViewRow In grd_order_view.Rows
-            grd_order_view.Rows.RemoveAt(grd_order_view.Rows.Count - 1)
-        Next
-        ' for some reasons, the first row will not be deleted, so deleting it explicitly seems like a good idea
-        If grd_order_view.Rows.Count > 0 Then
-            grd_order_view.Rows.RemoveAt(0)
-        End If
+        grd_order_view.Rows.Clear()
     End Sub
 
 End Class

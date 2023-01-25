@@ -201,7 +201,7 @@
         If orderTable.Rows.Count > 0 Then
             Dim lastorderid As String = orderTable.Rows(orderTable.Rows.Count - 1).Item("fld_order_id")
             'MsgBox(lastmatric)
-            Dim neworderid As String = "K00" & Mid(lastorderid, 2) + 1
+            Dim neworderid As String = "K00" & Mid(lastorderid, 3) + 1
             Return neworderid
         Else
             Dim neworderid As String
@@ -229,13 +229,7 @@
     End Sub
 
     Private Sub clear_cart()
-        For Each row As DataGridViewRow In grd_cart_view.Rows
-            grd_cart_view.Rows.RemoveAt(grd_cart_view.Rows.Count - 1)
-        Next
-        ' for some reasons, the first row will not be deleted, so deleting it explicitly seems like a good idea
-        If grd_cart_view.Rows.Count > 0 Then
-            grd_cart_view.Rows.RemoveAt(0)
-        End If
+        grd_cart_view.Rows.Clear()
         isCartEmpty = True
         txt_cart_total.Text = "0.00"
         cartArray.Clear()
@@ -296,7 +290,6 @@
             Beep()
             MsgBox（"Please add a product first !!! ")
         End If
-
     End Sub
 
     'catch user deleting rows and rerender the cart total price
